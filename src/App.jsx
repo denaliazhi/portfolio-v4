@@ -1,21 +1,10 @@
 import { useState } from "react";
-import Sample from "./components/Sample";
-import "./App.css";
+import Header from "./components/Header";
 
 function App() {
-  const [heading, setHeading] = useState("Sprinkles");
   return (
     <>
-      <h1>{heading}</h1>
-      <button
-        onClick={() => {
-          setHeading("Chocolate");
-        }}
-      >
-        Change
-      </button>
-
-      <Sample></Sample>
+      <Header />
     </>
   );
 }
