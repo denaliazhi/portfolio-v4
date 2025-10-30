@@ -29,7 +29,22 @@ a:active {
   text-decoration: none;
 }
 
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+h1 {
+  font-size: 7.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
 /* --------------- HEADER --------------- */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -63,7 +78,7 @@ header {
 }
 
 .nav-icon {
-  opacity: 0;
+  display: none;
 }
 
 .nav-items {
@@ -71,19 +86,17 @@ header {
   gap: 2rem;
 }
 
+/* --------------- HERO TEXT --------------- */
+
+/* --------------- MOBILE --------------- */
+
 @media (max-width: 768px) {
   body {
     padding: 1.5rem 1rem;
   }
 
-  nav {
-    margin-left: auto;
-  }
-
   /* Hamburger menu */
   .nav-icon {
-    opacity: 1;
-
     margin-bottom: 1rem;
 
     display: flex;
@@ -106,13 +119,15 @@ header {
   }
 
   .nav-icon.x-mark > div:nth-child(1) {
-    transform: translateY(0.5rem) rotateZ(45deg);
+    transform: translateY(0.3rem) rotateZ(45deg);
   }
+
   .nav-icon.x-mark > div:nth-child(2) {
-    opacity: 0;
+    display: none;
   }
+
   .nav-icon.x-mark > div:nth-child(3) {
-    transform: translateY(-0.5rem) rotateZ(-45deg);
+    transform: translateY(-0.3rem) rotateZ(-45deg);
   }
 
   .nav-items {

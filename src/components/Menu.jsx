@@ -6,14 +6,14 @@ export default function Menu({ items }) {
   const BREAKPOINT = 768;
 
   useEffect(() => {
+    if (screenWidth < BREAKPOINT) {
+      // Collapse menu if screen-width changes to below breakpoint
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      if (screenWidth < BREAKPOINT) {
-        // Collapse menu if screen-width changes
-        setIsOpen(false);
-      } else {
-        setIsOpen(true);
-      }
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -27,15 +27,15 @@ export default function Menu({ items }) {
 
   return (
     <nav>
-      <div
+      <button
         className={isOpen ? "nav-icon x-mark" : "nav-icon"}
-        aria-label="Show the menu"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
         onClick={handleClick}
       >
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </button>
       {isOpen && (
         <li className="nav-items">
           {items.map((item) => (
