@@ -4,16 +4,16 @@
   --lighter-main: rgba(var(--brown), 0.4);
   --background: rgb(250, 247, 244);
   --rounded: 0.7rem;
-  --hero-text: 2.5rem;
+  --hero-text: 2.3rem;
 }
 
 @font-face {
   font-family: "Chivo";
-  src: url("Chivo.ttf");
+  src: url("/Chivo.ttf");
 }
 @font-face {
   font-family: "Petrona";
-  src: url("Petrona.ttf");
+  src: url("/Petrona.ttf");
 }
 
 * {
@@ -39,7 +39,7 @@ body {
 }
 
 main {
-  padding: 0 10rem;
+  padding: 0 5rem;
 
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ button {
 h1 {
   font-family: "Petrona", "Times New Roman", Times, serif;
   font-weight: 800;
-  font-size: 9.5rem;
+  font-size: 6rem;
 }
 
 h2 {
@@ -81,7 +81,7 @@ header {
   width: 2rem;
   height: 2rem;
   background-position: center;
-  background-image: url("logo-icon.png");
+  background-image: url("/logo-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -115,12 +115,12 @@ header {
 /* --------------- HERO TEXT --------------- */
 
 .hero {
-  flex-wrap: wrap;
-  height: 65vh;
+  margin-top: 2rem;
 
   display: flex;
   justify-content: center;
   gap: 5rem;
+  flex-wrap: wrap;
 }
 
 .hero h1 {
@@ -133,14 +133,10 @@ header {
 }
 
 #playground-slide {
-  height: 30rem;
-  width: 30rem;
-
-  margin-top: auto;
-  /* background-image: url("slide.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat; */
+  height: auto;
+  width: 100%;
+  min-width: 15rem;
+  max-width: 25rem;
 }
 
 .greeting {
@@ -163,7 +159,7 @@ header {
   height: 4rem;
   width: 4rem;
 
-  background-image: url("hand.png");
+  background-image: url("/hand.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -172,11 +168,11 @@ header {
 }
 
 .greeting.slide-down {
-  top: 0.6rem;
-  left: 5rem;
+  top: -1rem;
+  left: 3.5rem;
 
   offset-path: path(
-    "M0.0664062 0.262939C72.6927 18.5148 22.6724 345.981 287.854 361.108C553.035 376.235 720.273 343.42 864.338 380.51C1008.4 417.601 1044.54 570.059 1044.54 570.059"
+    "M0.0166016 1.00168C44.2666 0.250527 55.2666 251.251 199.267 279.25C343.267 307.249 401.267 271.25 543.267 261.25C685.267 251.25 731.267 359.25 731.267 359.25"
   );
   animation: slide-down 5s ease-in 1;
 }
@@ -197,13 +193,13 @@ header {
     offset-distance: 2%;
   }
   25% {
-    offset-distance: 67%;
-  }
-  50% {
-    offset-distance: 70%;
-    opacity: 1;
+    offset-distance: 78.5%;
   }
   60% {
+    offset-distance: 79.5%;
+    opacity: 1;
+  }
+  70% {
     offset-distance: 100%;
     opacity: 0;
   }
@@ -215,6 +211,7 @@ header {
 
 .hero-text {
   max-width: min-content;
+  margin-top: -3rem;
 
   display: flex;
   flex-direction: column;
@@ -239,10 +236,14 @@ header {
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
 
-@media (max-width: 970px) {
+@media (max-width: 380px) {
   /* -------- GENERAL -------- */
   body {
     padding: 1.5rem 1rem;
+  }
+
+  #root {
+    gap: 2rem;
   }
 
   h1 {
@@ -251,6 +252,7 @@ header {
 
   main {
     padding: 0 2rem;
+    transform: scale(0.8);
   }
 
   /* -------- HEADER -------- */
@@ -306,5 +308,32 @@ header {
   .hero {
     max-width: 100%;
     align-self: flex-start;
+  }
+
+  #waving-hand {
+    display: none;
+  }
+
+  .greeting.slide-down {
+    left: 1.8rem;
+    top: -1.9rem;
+    offset-path: path(
+      "M0.0195312 1.00222C20.5176 0.609327 11.8991 50.4984 58.4593 132.749C105.02 215 159.02 169 195.02 185.001"
+    );
+  }
+
+  @keyframes slide-down {
+    0% {
+      offset-distance: 10%;
+    }
+    15% {
+      offset-distance: 98%;
+    }
+    50% {
+      offset-distance: 100%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
   }
 }
