@@ -22,7 +22,7 @@ export default function Menu({ items }) {
   }, [screenWidth]);
 
   const handleClick = () => {
-    setIsOpen(isOpen ? false : true);
+    setIsOpen(!isOpen);
   };
 
   return (
