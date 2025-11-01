@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function Menu({ items }) {
   const [isOpen, setIsOpen] = useState(true);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const BREAKPOINT = 380;
+  const BREAKPOINT = 600;
 
   useEffect(() => {
     if (screenWidth < BREAKPOINT) {
