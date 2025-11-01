@@ -23,10 +23,9 @@
 }
 
 body {
-  font-size: 1.2rem;
   font-family: "Chivo", system-ui, sans-serif;
   color: var(--main);
-  padding: 2rem;
+  padding: 0.5rem 1rem;
   background-color: var(--background);
 }
 
@@ -35,11 +34,12 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 main {
-  padding: 0 5rem;
+  max-width: 70rem;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ h1 {
 }
 
 h2 {
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 /* --------------- HEADER --------------- */
@@ -92,8 +92,9 @@ header {
 
 .logo-icon + div {
   opacity: 0;
+  font-size: 0.8rem;
 
-  line-height: 1rem;
+  line-height: 0.7rem;
   margin-left: 0.1rem;
   margin-right: auto;
 }
@@ -116,11 +117,13 @@ header {
 
 .hero {
   margin-top: 2rem;
-
+  height: 70vh;
+  transform: scale(80%);
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .hero h1 {
@@ -133,7 +136,6 @@ header {
 }
 
 #playground-slide {
-  height: auto;
   width: 100%;
   min-width: 15rem;
   max-width: 25rem;
@@ -168,9 +170,8 @@ header {
 }
 
 .greeting.slide-down {
-  top: -1rem;
-  left: 3.5rem;
-
+  top: -1.2rem;
+  left: 3.2rem;
   offset-path: path(
     "M0.0166016 1.00168C44.2666 0.250527 55.2666 251.251 199.267 279.25C343.267 307.249 401.267 271.25 543.267 261.25C685.267 251.25 731.267 359.25 731.267 359.25"
   );
@@ -191,21 +192,27 @@ header {
 @keyframes slide-down {
   10% {
     offset-distance: 2%;
+    top: -0.5rem;
+    left: 3.2rem;
   }
   25% {
-    offset-distance: 78.5%;
+    offset-distance: 80%;
+    top: 1rem;
+    left: 5.8rem;
   }
-  60% {
-    offset-distance: 79.5%;
+  50% {
+    offset-distance: 82%;
     opacity: 1;
   }
-  70% {
+  60% {
     offset-distance: 100%;
     opacity: 0;
   }
   100% {
     offset-distance: 100%;
     opacity: 0;
+    top: 0.7rem;
+    left: 8rem;
   }
 }
 
@@ -243,7 +250,7 @@ header {
   }
 
   #root {
-    gap: 2rem;
+    gap: 1rem;
   }
 
   h1 {
@@ -251,8 +258,7 @@ header {
   }
 
   main {
-    padding: 0 2rem;
-    transform: scale(0.8);
+    margin: 0;
   }
 
   /* -------- HEADER -------- */
@@ -307,15 +313,20 @@ header {
   /* -------- HERO -------- */
   .hero {
     max-width: 100%;
-    align-self: flex-start;
+    /* align-self: flex-start; */
+    height: auto;
+  }
+
+  .greeting {
+    gap: 0;
   }
 
   #waving-hand {
-    display: none;
+    transform: scale(0.7) rotate(45deg);
   }
 
   .greeting.slide-down {
-    left: 1.8rem;
+    left: 4rem;
     top: -1.9rem;
     offset-path: path(
       "M0.0195312 1.00222C20.5176 0.609327 11.8991 50.4984 58.4593 132.749C105.02 215 159.02 169 195.02 185.001"
@@ -324,15 +335,23 @@ header {
 
   @keyframes slide-down {
     0% {
-      offset-distance: 10%;
+      top: 0rem;
+      left: 2.5rem;
+      offset-distance: 5%;
     }
     15% {
-      offset-distance: 98%;
+      top: 3rem;
+      left: 7rem;
+      offset-distance: 95%;
     }
-    50% {
+    35% {
+      top: 3rem;
+      left: 7rem;
       offset-distance: 100%;
     }
     100% {
+      top: 3rem;
+      left: 7rem;
       offset-distance: 100%;
     }
   }
