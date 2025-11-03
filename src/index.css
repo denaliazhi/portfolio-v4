@@ -22,6 +22,12 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-gutter: stable;
+  scrollbar-color: #d7d7d77d transparent;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Chivo", system-ui, sans-serif;
   color: var(--main);
@@ -38,7 +44,7 @@ body {
 }
 
 main {
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 
   display: flex;
   flex-direction: column;
@@ -53,13 +59,13 @@ a:active {
 }
 
 button {
-  outline: none;
   border: none;
   background-color: transparent;
 }
 
 h1 {
-  font-family: "Petrona", "Times New Roman", Times, serif;
+  font-family: "Petrona", "Times New Roman", Times,
+    serif;
   font-weight: 800;
   font-size: 6rem;
 }
@@ -68,7 +74,7 @@ h2 {
   font-size: 5rem;
 }
 
-/* --------------- HEADER --------------- */
+/* --------------- Header --------------- */
 
 header {
   display: flex;
@@ -112,7 +118,7 @@ header {
   gap: 2rem;
 }
 
-/* --------------- HERO TEXT --------------- */
+/* --------------- Home Page: Hero --------------- */
 
 .hero {
   margin-top: 2rem;
@@ -239,6 +245,121 @@ header {
   font-size: 1.5rem;
 }
 
+/* --------------- Home Page: Marquee --------------- */
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#marquee-controller {
+  font-size: 0.8rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+#marquee-controller button {
+  height: 1rem;
+  width: 2rem;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
+}
+#marquee-controller button:hover {
+  transform: scale(1.2);
+}
+#marquee-controller input[type="range"] {
+  --thumb-image: url("/hand.png");
+
+  width: 10rem;
+  height: 1px;
+  direction: rtl;
+
+  border: 1px solid var(--main);
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+#marquee-controller
+  input[type="range" i]::-webkit-slider-thumb {
+  height: 35px;
+  aspect-ratio: 1;
+
+  background-image: var(--thumb-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+#marquee-controller
+  input[type="range"]::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+
+  background-image: var(--thumb-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.marquee-text {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+
+  border-bottom: 3px dashed
+    rgba(var(--brown), 0.1);
+
+  display: flex;
+  gap: 0.2rem;
+}
+.marquee-text p {
+  min-width: max-content;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  animation: scroll linear infinite forwards;
+}
+.marquee-text p::before {
+  content: "";
+  display: inline-block;
+  width: 3rem;
+  height: 2rem;
+  margin-left: 3rem;
+  margin-bottom: -0.1rem;
+
+  background-image: url("/train.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(1.2);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 0.2rem));
+  }
+}
+
 /* --------------- MEDIUM SIZE DEVICE --------------- */
 
 @media (max-width: 600px) {
@@ -259,7 +380,7 @@ header {
     margin: 0;
   }
 
-  /* -------- HEADER -------- */
+  /* -------- Header -------- */
   /* Hamburger menu */
   .nav-icon {
     margin-bottom: 1rem;
@@ -308,7 +429,7 @@ header {
     gap: 1rem;
   }
 
-  /* -------- HERO -------- */
+  /* -------- Home Page: Hero -------- */
   .hero {
     max-width: 100%;
     /* align-self: flex-start; */
@@ -352,5 +473,12 @@ header {
       left: 7rem;
       offset-distance: 100%;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-text p {
+    animation-play-state: paused !important;
+    overflow-x: scroll;
   }
 }
