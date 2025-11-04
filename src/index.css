@@ -80,7 +80,7 @@ h1 {
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 /* --------------- Header --------------- */
@@ -305,6 +305,8 @@ header {
   height: 35px;
   aspect-ratio: 1;
 
+  background-color: transparent;
+  box-shadow: none;
   background-image: var(--thumb-image);
   background-size: contain;
   background-repeat: no-repeat;
@@ -318,6 +320,8 @@ header {
   height: 30px;
   width: 30px;
 
+  background-color: transparent;
+  box-shadow: none;
   background-image: var(--thumb-image);
   background-size: contain;
   background-repeat: no-repeat;
@@ -368,6 +372,45 @@ header {
   100% {
     transform: translateX(calc(-100% - 0.2rem));
   }
+}
+
+/* --------------- Home Page: Pitch --------------- */
+#pitch {
+  width: min(100%, 50rem);
+  margin: 4rem auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#pitch div {
+  width: 23rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#pitch h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--sans-serif);
+}
+
+#pitch div:nth-child(1) {
+  gap: 1.5rem;
+}
+
+#pitch div:nth-child(1) > p:first-of-type {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--serif);
+  line-height: 100%;
+}
+
+#pitch div:nth-child(2) {
+  align-self: flex-end;
 }
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
