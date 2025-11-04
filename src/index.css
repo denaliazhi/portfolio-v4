@@ -35,7 +35,6 @@ body {
 
   font-family: var(--sans-serif);
   color: var(--main);
-  padding: 0.5rem 1rem;
   background-color: var(--background);
 }
 
@@ -83,28 +82,32 @@ h2 {
   font-size: 3rem;
 }
 
+.icon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* --------------- Header --------------- */
 
 header {
+  padding: 0.7rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo-icon {
-  width: 2rem;
-  height: 2rem;
-  background-position: center;
+.logo.icon {
+  width: 1.5rem;
+  height: 1.5rem;
   background-image: url("/logo-icon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-.logo-icon:hover {
+.logo.icon:hover {
   cursor: pointer;
 }
 
-.logo-icon + div {
+.logo.icon + div {
   opacity: 0;
   font-size: 0.8rem;
 
@@ -113,7 +116,7 @@ header {
   margin-right: auto;
 }
 
-.logo-icon:hover + div {
+.logo.icon:hover + div {
   opacity: 1;
   transition: opacity 200ms ease-in-out;
 }
@@ -125,6 +128,38 @@ header {
 .nav-items {
   display: flex;
   gap: 2rem;
+}
+
+header,
+footer {
+  padding: 0.7rem 1.5rem;
+}
+
+/* --------------- Footer --------------- */
+
+footer {
+  font-size: 0.8rem;
+  color: var(--lighter-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p:hover {
+  color: var(--main);
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socials .icon:first-of-type {
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("linkedin-icon.png");
 }
 
 /* --------------- Home Page: Hero --------------- */

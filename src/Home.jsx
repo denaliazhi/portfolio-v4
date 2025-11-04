@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
@@ -12,6 +13,7 @@ export default function Home() {
         <Marquee />
         <Pitch />
       </main>
+      <Footer />
     </>
   );
 }
