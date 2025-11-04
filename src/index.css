@@ -29,7 +29,11 @@ html {
 }
 
 body {
-  font-family: "Chivo", system-ui, sans-serif;
+  --serif: "Petrona", "Times New Roman", Times,
+    serif;
+  --sans-serif: "Chivo", system-ui, sans-serif;
+
+  font-family: var(--sans-serif);
   color: var(--main);
   padding: 0.5rem 1rem;
   background-color: var(--background);
@@ -63,9 +67,14 @@ button {
   background-color: transparent;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+}
+
 h1 {
-  font-family: "Petrona", "Times New Roman", Times,
-    serif;
   font-weight: 800;
   font-size: 6rem;
 }
@@ -135,6 +144,14 @@ header {
   letter-spacing: -3px;
 }
 
+.hero h2 {
+  font-family: var(--sans-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
 .hero div:first-child {
   position: relative;
 }
@@ -174,8 +191,8 @@ header {
 }
 
 .greeting.slide-down {
-  top: -1.2rem;
-  left: 3.2rem;
+  top: -2rem;
+  left: 3rem;
   offset-path: path(
     "M0.0166016 1.00168C44.2666 0.250527 55.2666 251.251 199.267 279.25C343.267 307.249 401.267 271.25 543.267 261.25C685.267 251.25 731.267 359.25 731.267 359.25"
   );
@@ -196,15 +213,14 @@ header {
 @keyframes slide-down {
   10% {
     offset-distance: 2%;
-    top: -0.5rem;
-    left: 3.2rem;
+    left: 1.5rem;
+    top: -2.5rem;
   }
   25% {
     offset-distance: 80%;
-    top: 1rem;
-    left: 5.8rem;
+    top: -2.8rem;
   }
-  50% {
+  55% {
     offset-distance: 82%;
     opacity: 1;
   }
@@ -215,8 +231,6 @@ header {
   100% {
     offset-distance: 100%;
     opacity: 0;
-    top: 0.7rem;
-    left: 8rem;
   }
 }
 
@@ -239,10 +253,6 @@ header {
 
 .dotted-text {
   opacity: 0.2;
-}
-
-.hero + h2 {
-  font-size: 1.5rem;
 }
 
 /* --------------- Home Page: Marquee --------------- */
@@ -458,18 +468,23 @@ header {
       left: 2.5rem;
       offset-distance: 5%;
     }
-    15% {
-      top: 3rem;
-      left: 7rem;
-      offset-distance: 95%;
+    5% {
+      top: 1rem;
+      left: 3rem;
+      offset-distance: 7%;
     }
-    35% {
-      top: 3rem;
+    15% {
+      top: 4.2rem;
+      left: 6rem;
+      offset-distance: 100%;
+    }
+    17% {
+      top: 3.5rem;
       left: 7rem;
       offset-distance: 100%;
     }
     100% {
-      top: 3rem;
+      top: 3.5rem;
       left: 7rem;
       offset-distance: 100%;
     }

@@ -15,6 +15,8 @@ export default function Hero() {
             id="playground-slide"
             src="/slide.png"
             alt="A playground slide"
+            width="360"
+            height="360"
           />
           <div
             className={
@@ -36,6 +38,7 @@ export default function Hero() {
               hi
             </span>
           </h1>
+          <h2>Designer & Developer</h2>
         </div>
       </section>
     </>
