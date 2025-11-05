@@ -3,27 +3,21 @@ import { useState } from "react";
 export default function Marquee() {
   const [play, setPlay] = useState(true);
 
-  const [speed, setSpeed] = useState(10);
+  const [speed, setSpeed] = useState(-10);
   const DEFAULT_SPEED = 30; // in seconds
   const duration = `${DEFAULT_SPEED + speed}s`;
-
+  console.log("Duration: ", duration);
   const handleChange = (e) => {
     setSpeed(Number(e.target.value));
   };
   const handleClick = () => {
-    console.log(play);
     setPlay(!play);
   };
 
-  const TEXT = `Welcome to my portfolio. I’m glad you’ve
-          stopped by. Click around and see what
-          you can find. Here strictly on business?
-          The “Work” tab contains my latest
-          projects. They’re also at the bottom of
-          this page, but you’ll have to scroll
-          through some other stuff first ...you might get distracted from
-          what you’re supposed to be doing. You
-          might even have fun.`;
+  const TEXT = `Welcome to my portfolio. Here on business?
+          Visit the “Work” tab. Don't scroll down 
+          or click around because you might get distracted. 
+          You might even have fun.`;
 
   const textStyle = {
     animationDuration: duration,
@@ -34,28 +28,27 @@ export default function Marquee() {
   switch (speed) {
     case -20:
       sliderStyle = {
-        "--thumb-image": "url('/pigeon.png')",
-      };
-      break;
-    case -10:
-      sliderStyle = {
         "--thumb-image": "url('/rabbit.png')",
-      };
-      break;
-    case 10:
-      sliderStyle = {
-        "--thumb-image": "url('/turtle.png')",
+        "--thumb-height": "35px",
+        "--thumb-color": "transparent",
+        "--thumb-outline": "none",
       };
       break;
     case 20:
       sliderStyle = {
-        "--thumb-image": "url('/snail.png')",
+        "--thumb-image": "url('/turtle.png')",
+        "--thumb-height": "35px",
+        "--thumb-color": "transparent",
+        "--thumb-outline": "none",
       };
       break;
-    case 0:
     default:
       sliderStyle = {
-        "--thumb-image": "url('/toddler.png')",
+        "--thumb-image": "none",
+        "--thumb-height": "12px",
+        "--thumb-color": "var(--main)",
+        "--thumb-outline":
+          "5px solid var(--background)",
       };
       break;
   }

@@ -22,6 +22,7 @@ export default function Pitch() {
             creator.
           </p>
         </div>
+        <div id="elevator-scroll"></div>
       </section>
     </>
   );
