@@ -1,21 +1,19 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import PageTemplate from "./components/Page-Template";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Pitch from "./components/Pitch";
-import Projects from "./components/Projects";
+import ProjectsContainer from "./components/Projects-Container";
+import { projects } from "./data/projects-info";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
+      <PageTemplate>
         <Hero />
         <Marquee />
         <Pitch />
-        <Projects />
-      </main>
-      <Footer />
+        <ProjectsContainer content={projects} />
+      </PageTemplate>
     </>
   );
 }

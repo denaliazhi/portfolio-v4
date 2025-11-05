@@ -301,8 +301,6 @@ footer p:hover {
 }
 
 #marquee-controller {
-  font-size: 0.8rem;
-
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -537,7 +535,7 @@ footer p:hover {
   font-size: 0.9rem;
   width: max-content;
   padding: 0.3rem 0.7rem;
-  background-color: var(--lighter-main);
+  background-color: rgba(var(--brown), 0.2);
   border-radius: 0.4rem;
 }
 
