@@ -3,26 +3,28 @@ export default function ProjectsContainer({
 }) {
   return (
     <section className="projects">
-      <h2>Here's a sample of my work</h2>
+      <h2>Latest projects</h2>
       <div>
         {Object.values(content).map((project) => (
           <a
-            href={`/${project.title.replace(
+            href={`/${project.title.replaceAll(
               " ",
               "-"
             )}`}
           >
             <article>
-              <h3>{project.desc}</h3>
+              <h3>{project.desc_short}</h3>
               <div>
                 <img
-                  src={project.src}
-                  alt={project.alt}
+                  src={`/projects/${project.images_featured[0].src}`}
+                  alt={
+                    project.images_featured[0].alt
+                  }
                   height="250"
                   width="350"
                 />
               </div>
-              <ul>
+              <ul class="tags">
                 {project.tools.map((tool) => (
                   <li>{tool}</li>
                 ))}

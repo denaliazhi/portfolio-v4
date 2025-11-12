@@ -13,7 +13,7 @@ export default function Hero() {
         <div>
           <img
             id="playground-slide"
-            src="/slide.png"
+            src="/home/slide.png"
             alt="A playground slide"
             width="360"
             height="360"
@@ -39,6 +39,7 @@ export default function Hero() {
             </span>
           </h1>
           <h2>Designer & Developer</h2>
+          {/* Swap on click, change flex order */}
         </div>
       </section>
     </>

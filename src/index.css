@@ -5,15 +5,16 @@
   --background: rgb(250, 247, 244);
   --rounded: 0.7rem;
   --hero-text: 2.3rem;
+  --shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @font-face {
   font-family: "Chivo";
-  src: url("/Chivo.ttf");
+  src: url("/fonts/Chivo.ttf");
 }
 @font-face {
   font-family: "Petrona";
-  src: url("/Petrona.ttf");
+  src: url("/fonts/Petrona.ttf");
 }
 
 * {
@@ -44,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: space-between;
 }
 
 main {
@@ -104,7 +106,7 @@ header {
 .logo.icon {
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url("/logo-icon.png");
+  background-image: url("/personal-logo.png");
 }
 
 .logo.icon:hover {
@@ -163,7 +165,7 @@ footer p:hover {
   display: block;
   height: 1.5rem;
   width: 1.5rem;
-  background-image: url("linkedin-icon.png");
+  background-image: url("icons/linked-in.png");
 }
 
 /* --------------- Home Page: Hero --------------- */
@@ -218,7 +220,7 @@ footer p:hover {
   height: 4rem;
   width: 4rem;
 
-  background-image: url("/hand.png");
+  background-image: url("/home/hand.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -399,7 +401,7 @@ footer p:hover {
   margin-left: 3rem;
   margin-bottom: -0.1rem;
 
-  background-image: url("/train.png");
+  background-image: url("/home/train.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -436,7 +438,8 @@ footer p:hover {
   background-color: white;
 }
 
-#pitch div:not(#elevator-scroll) {
+#pitch > div:not(#elevator-scroll) {
+  position: relative;
   width: min(100%, 50rem);
   margin: 0 auto;
 
@@ -468,6 +471,17 @@ footer p:hover {
 
 #pitch div:nth-child(2) {
   align-self: flex-end;
+}
+
+#vacuum {
+  position: absolute;
+  max-width: 12rem;
+  height: auto;
+  right: 9rem;
+  top: -8rem;
+  filter: drop-shadow(
+    1px 4px 3px rgba(0, 0, 0, 0.4)
+  );
 }
 
 /* --------------- Home Page: Projects --------------- */
@@ -524,19 +538,90 @@ footer p:hover {
   transform: scale(1.1);
 }
 
-.projects ul {
+.tags {
   list-style: none;
   display: flex;
   gap: 0.2rem;
   flex-wrap: wrap;
 }
 
-.projects li {
+.tags li {
   font-size: 0.9rem;
   width: max-content;
   padding: 0.3rem 0.7rem;
   background-color: rgba(var(--brown), 0.2);
   border-radius: 0.4rem;
+}
+
+/* --------------- Project Page --------------- */
+
+.project-page {
+  max-width: 40rem;
+}
+
+.project-page article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-page h1 {
+  text-align: center;
+  font-size: 3.2rem;
+}
+
+.project-page hr {
+  margin: 1rem 0;
+  opacity: 20%;
+}
+
+.project-page .tags {
+  margin: 1rem 0;
+}
+
+/* --------------- Carousel --------------- */
+
+.carousel,
+.carousel-nav {
+  width: 100%;
+}
+
+.carousel > img:first-of-type,
+.carousel-nav li > img {
+  width: 100%;
+  height: auto;
+
+  border-radius: var(--rounded);
+}
+
+.carousel-nav {
+  margin-top: 0.5rem;
+
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: hidden;
+}
+
+.carousel-nav li {
+  list-style: none;
+  height: 6.7rem;
+  width: 10rem;
+  flex: 0 0 25%;
+}
+
+.carousel-nav li > img {
+  cursor: pointer;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.carousel > img:first-of-type,
+.carousel-nav li > img.selected {
+  box-shadow: var(--shadow);
+}
+
+.carousel-nav li > img:not(.selected) {
+  filter: brightness(0.9);
 }
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
@@ -601,7 +686,8 @@ footer p:hover {
 
     padding: 2rem;
 
-    box-shadow: 1px 1px 0.4rem rgba(0, 0, 0, 0.2);
+    background-color: var(--background);
+    box-shadow: var(--shadow);
     border-radius: var(--rounded);
 
     flex-direction: column;
