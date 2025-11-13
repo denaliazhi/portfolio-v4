@@ -1,12 +1,13 @@
+import { projects } from "../data/projects-data";
 import PageTemplate from "../components/Page-Template";
 import ProjectHeader from "../components/Project-Header";
 import Carousel from "../components/Carousel";
-import { projects } from "../data/projects-data";
 import Callout from "../components/Callout";
 import TwoCol from "../components/Two-Col";
 import OneCol from "../components/One-Col";
 import Accordion from "../components/Accordion";
 import ImageCaption from "../components/Image-Caption";
+import WordBlocks from "../components/WordBlocks";
 
 export default function GroceryApp() {
   const project = projects.groceryShop;
@@ -106,11 +107,14 @@ export default function GroceryApp() {
         <OneCol id="grocery-twist">
           <h2>My Twist</h2>
           <p>
-            Based on my teaching experience, I
-            decided to incorporate the shopping
-            cart into a narrative app about
-            grocery shopping that could be used by
-            ESL students and teachers.
+            Inspired by my teaching experience, I
+            decided to{" "}
+            <span className="highlight">
+              turn the shopping cart into a
+              narrative app about grocery shopping
+            </span>{" "}
+            that might benefit ESL students and
+            teachers.
           </p>
           <h3>Benefits for students</h3>
           <Accordion
@@ -118,38 +122,38 @@ export default function GroceryApp() {
             heading="a realistic context for grammar and vocabulary"
           >
             <p>
-              Through a virtual visit to the
-              grocery store, the app would allow
-              students to associate the language
-              of shopping with familiar scenes and
-              actions.
+              Through a virtual grocery store,
+              students would be able to associate
+              the language of shopping with
+              familiar scenes and actions.
             </p>
           </Accordion>
           <Accordion heading="accessible pronunciation practice">
             <p>
-              Event-based audio narration would
-              help students practice their
-              pronunciation outside of class,
-              where they often aren't around
-              English speakers.
+              ESL students often live and work
+              around non-English speakers, so they
+              struggle to practice their
+              pronunciation outside of class. This
+              app would feature text-to-speech
+              event narration to address this gap.
             </p>
           </Accordion>
           <h3>Benefits for teachers</h3>{" "}
           <Accordion heading="ready-to-use and reusable content">
             <p>
-              Teachers wouldn't need to prepare a
-              lesson about grocery shopping from
-              scratch. They'd save the time and
-              effort required to set scene in the
+              Teachers would save the time and
+              effort of preparing a lesson from
+              scratch or setting up a scene in the
               classroom.
             </p>
           </Accordion>
           <Accordion heading="a source of engagement during in-person or online class">
             <p>
               This app would allow students to
-              interact with the content in a way
-              that's difficult to achieve through
-              other means.
+              engage with the content in a way
+              that would be difficult to achieve
+              through traditional means such as
+              slides.
             </p>
           </Accordion>
         </OneCol>
@@ -196,36 +200,48 @@ export default function GroceryApp() {
             Some of the key design questions that
             I asked were
           </p>
-          <Accordion heading="How would I balance realism with abstraction?">
+          <Accordion
+            heading="How do I balance realism with abstraction?"
+            startOpen={true}
+          >
             <p>
-              A realistic grocery store would help
-              students relate the lesson content
-              to their own lives. However, a
-              digital medium that is too realistic
-              could confuse users who expect
-              certain abstractions when shopping
-              online.
+              A realistic store interface could
+              help students translate the lesson
+              to their own lives. At the same
+              time, digital realism might confuse
+              them if they're used to the
+              abstraction of online shopping.
             </p>
+            <aside>
+              <p>
+                <span className="bold">
+                  Example
+                </span>
+              </p>{" "}
+              <p>
+                In the physical world, a shopper
+                might take a product from the
+                shelf and set it in their cart. A
+                realistic online store could mimic
+                that action by requiring the user
+                to drag and drop images of
+                products. However, most users have
+                learned to click on an "Add to
+                cart" button instead.
+              </p>
+            </aside>
             <p>
-              For example, in the real world, a
-              shopper might physically take a
-              product from the shelf and set it in
-              their cart. A realistic digital
-              equivalent could be to require the
-              user to drag and drop images of
-              products into their cart. On the
-              other hand, the standard action is
-              simply to click on an "Add to cart"
-              button.
-            </p>
-            <p>
-              The product display and shopping
-              cart would mirror the familiar
-              design of an online store while the
-              background image would change
-              depending on the grocery section to
-              simulate the user moving around a
-              physical store.
+              <span className="bold">
+                I decided that
+              </span>{" "}
+              the product display and cart would
+              retain the familiarity of an online
+              store while{" "}
+              <span className="highlight">
+                the background image would change
+                to match the grocery section
+              </span>
+              , simulating a physical store.
             </p>
             <TwoCol
               col1={
@@ -234,7 +250,7 @@ export default function GroceryApp() {
                     src: "/projects/grocery-store-exterior.png",
                     alt: "Exterior of the grocery store",
                     caption:
-                      "A bookend scene establishing the “physical” setting",
+                      "An scene establishing the “physical” store setting",
                   }}
                   imageStyle="modern"
                 />
@@ -252,47 +268,88 @@ export default function GroceryApp() {
               }
             />
             <p>
-              Also, bookend scenes that took place
-              outside the store would add realism
-              without convoluting the shopping
-              experience.
+              In addition, bookend scenes outside
+              the store would add realism without
+              convoluting the shopping experience.
             </p>
           </Accordion>
-          <Accordion heading="How would I convey the app’s educational purpose?">
+          <Accordion heading="How do I convey the app’s educational value?">
             <p>
-              Under the main content, I would
-              include a section with details like
-              whom the app was intended for and
-              what they could expect to learn. For
-              additional context, the lesson would
-              be preceded by an instructional
-              dialog box.
+              I would create context in two ways.
+              First, the main content would be
+              preceded by a dialog box that
+              informs the user of the lesson's
+              purpose. Second, details about the
+              lesson would be included in a
+              section under the main content.
             </p>
           </Accordion>
-          <Accordion heading="How would I guide students along the user flow?">
+          <Accordion heading="How do I ensure students follow the user flow?">
             <p>
-              The app would need to transition
+              Students would need to navigate
               between a linear, click-through mode
               for bookend scenes and a free-roam
-              mode for the shopping experience.
+              mode for the shopping scenes.
             </p>
             <p>
               During both modes, a narration bar
               at the bottom of the screen would
-              provide users with consistent visual
-              and audio cues to proceed. CSS
-              animations would offer additional
-              feedback for interactive elements.
+              provide users with{" "}
+              <span className="highlight">
+                consistent visual and audio cues
+              </span>{" "}
+              . Animations (with CSS) would offer
+              additional feedback on interactive
+              elements.
             </p>
           </Accordion>
         </OneCol>
         <hr />
-        <OneCol>
+        <OneCol id="grocery-development">
           <h2>Development</h2>
+          <p>
+            Some of the challenges during
+            implementation were
+          </p>
+          <WordBlocks
+            content={[
+              "Handling different routes within a single-page application",
+              "Translating the Figma design into React components",
+              "Representing English language with programming logic",
+              "Managing multiple states and side effects",
+              "Writing frontend tests",
+            ]}
+          />
+          <p>
+            During this process, I rethought and
+            refactored my code several times. It
+            was difficult to move on, knowing that
+            the project still had great room for
+            improvement. However, I had a ways to
+            go in my journey with The Odin
+            Project, so I settled on “progress
+            over perfection.” Technical details
+            can be viewed on my Github repository:
+          </p>
         </OneCol>
         <hr />
         <OneCol>
           <h2>Final Thoughts</h2>
+          <p>
+            This app felt beyond the scope of what
+            I knew at the time. However, I was
+            able to prove to myself— as I did
+            throughout my web development journey—
+            that the challenges I thought were
+            “insurmountable” could in fact be
+            surmounted with time and persistence.
+          </p>
+          <p>
+            I’m glad to have turned a generic
+            shopping cart into an accessible tool
+            for education, and I’d love to build
+            on this theme through future products.
+          </p>
         </OneCol>
         <hr />
       </article>

@@ -108,6 +108,17 @@ hr {
   opacity: 20%;
 }
 
+aside {
+  font-size: x-small;
+  padding: 1.5rem;
+  background-color: rgba(var(--brown), 0.1);
+  border-radius: var(--rounded);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* --------------- Header --------------- */
 
 header {
@@ -779,6 +790,23 @@ footer p:hover {
   background-color: rgba(var(--brown), 0.1);
   border-bottom-left-radius: var(--rounded);
   border-bottom-right-radius: var(--rounded);
+}
+
+/* ------------ Word Blocks ------------- */
+
+.word-blocks {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.word-blocks p {
+  flex: 1 1 30%;
+  font-size: small;
+  padding: 1.5rem;
+  border-radius: var(--rounded);
+  background-color: rgba(var(--brown), 0.1);
 }
 
 /* --------------- Project Page: Grocery App --------------- */
