@@ -5,7 +5,7 @@ export default function Callout({
   return (
     <section class="callout">
       <div
-        className="callout-icon"
+        className="icon"
         style={{
           backgroundImage: `url('/icons/${icon}.png')`,
         }}

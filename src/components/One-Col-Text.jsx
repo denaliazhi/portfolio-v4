@@ -1,5 +1,10 @@
-export default function OneCol({ children }) {
+export default function OneCol({ id, children }) {
   return (
-    <section class="one-col">{children}</section>
+    <section
+      id={id ? id : null}
+      className="one-col"
+    >
+      {children}
+    </section>
   );
 }

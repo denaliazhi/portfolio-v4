@@ -5,12 +5,13 @@ import { projects } from "../data/projects-data";
 import Callout from "../components/Callout";
 import TwoCol from "../components/Two-Col-Text-Image";
 import OneCol from "../components/One-Col-Text";
+import Accordion from "../components/Accordion";
 
 export default function GroceryApp() {
   const project = projects.groceryShop;
 
   return (
-    <PageTemplate className="project-page">
+    <PageTemplate className="grocery-app project-page">
       <article>
         <ProjectHeader
           title={project.title}
@@ -25,9 +26,9 @@ export default function GroceryApp() {
           icon="lightbulb"
           content={{
             heading:
-              "In a country where you don’t know the language, how do you shop for groceries?",
+              "In a country where you don't know the language, how do you shop for groceries?",
             body: [
-              "If you can’t figure out the store layout, can’t read the signs, and can’t ask for help, an everyday activity might feel like a challenge.",
+              "If you can't figure out the store layout, can't read the signs, and can't ask for help, an everyday activity might feel like a challenge.",
             ],
           }}
         />
@@ -55,7 +56,7 @@ export default function GroceryApp() {
             Early on, I sensed their doubt and
             frustration as they tried to learn a
             new language.{" "}
-            <span class="highlight">
+            <span className="highlight">
               Connecting our lessons to their
               everyday lives was crucial
             </span>{" "}
@@ -77,23 +78,25 @@ export default function GroceryApp() {
             Some months into learning web
             development with The Odin Project, I
             reached an assignment to build a mock
-            shopping cart with React.{" "}
+            shopping cart 🛒 with React.{" "}
           </p>
           <p>The requirements were as follows:</p>
           <ol>
             <li>
-              A shop page, displaying items that a
-              user could add to their cart
+              A <span className="bold">shop</span>{" "}
+              page, displaying items that a user
+              could add to their cart
             </li>
             <li>
-              A cart page, showing the user’s
-              selected items and their quantities
+              A <span className="bold">cart</span>{" "}
+              page, showing the user's selected
+              items and their quantities
             </li>
           </ol>
         </OneCol>
         <hr />
-        <OneCol>
-          <h3>My Twist</h3>
+        <OneCol id="grocery-twist">
+          <h2>My Twist</h2>
           <p>
             Based on my teaching experience, I
             decided to incorporate the shopping
@@ -101,8 +104,53 @@ export default function GroceryApp() {
             grocery shopping that could be used by
             ESL students and teachers.
           </p>
-          <h4>For students</h4>
-          <h4>For teachers</h4>
+          <h3>Benefits for students</h3>
+          <Accordion
+            startOpen={true}
+            heading="a realistic context for grammar and vocabulary"
+          >
+            <p>
+              Through a virtual visit to the
+              grocery store, the app would allow
+              students to associate the language
+              of shopping with familiar scenes and
+              actions.
+            </p>
+          </Accordion>
+          <Accordion
+            startOpen={false}
+            heading="accessible pronunciation practice"
+          >
+            <p>
+              Event-based audio narration would
+              help students practice their
+              pronunciation outside of class,
+              where they often aren't around
+              English speakers.
+            </p>
+          </Accordion>
+          <h3>Benefits for teachers</h3>{" "}
+          <Accordion
+            startOpen={false}
+            heading="ready-to-use and reusable content"
+          >
+            <p>
+              Teachers wouldn't need to prepare a
+              lesson about grocery shopping from
+              scratch. They'd save the time and
+              effort required to set scene in the
+              classroom.
+            </p>
+          </Accordion>
+          <Accordion
+            startOpen={false}
+            heading="a source of engagement during in-person or online class"
+          >
+            This app would allow students to
+            interact with the content in a way
+            that's difficult to achieve through
+            other means.
+          </Accordion>
         </OneCol>
         <hr />
       </article>
