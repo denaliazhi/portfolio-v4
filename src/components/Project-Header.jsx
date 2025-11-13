@@ -1,6 +1,6 @@
 export default function ProjectHeader({
   title,
-  desc_long,
+  desc,
   type,
   tools,
 }) {
@@ -14,7 +14,7 @@ export default function ProjectHeader({
         ))}
         <li>{type}</li>
       </ul>
-      <p>{desc_long}</p>
+      <p>{desc}</p>
     </section>
   );
 }
