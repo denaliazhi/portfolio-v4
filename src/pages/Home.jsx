@@ -11,8 +11,8 @@ export default function Home() {
       <PageTemplate className="home">
         <Hero />
         <ProjectsContainer content={projects} />
-        <Marquee />
-        <Pitch />
+        {/* <Marquee />
+        <Pitch /> */}
       </PageTemplate>
     </>
   );

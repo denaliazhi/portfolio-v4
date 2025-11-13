@@ -7,19 +7,19 @@ const projects = {
       students navigate the grocery store and gain confidence in their everyday lives.`,
     images_featured: [
       {
-        src: "cover-grocery.png",
+        src: "grocery-cover.png",
         alt: "Cover of ESL grocery shopping app",
       },
       {
-        src: "1-grocery-feature.png",
+        src: "grocery-feature-1.png",
         alt: "Introductory question: How do you grocery shop?",
       },
       {
-        src: "2-grocery-feature.png",
+        src: "grocery-feature-2.png",
         alt: "Key features",
       },
       {
-        src: "3-grocery-feature.png",
+        src: "grocery-feature-3.png",
         alt: "Target audience",
       },
     ],
@@ -33,7 +33,7 @@ const projects = {
       "A poetic, open-source scavenger hunt",
     images_featured: [
       {
-        src: "cover-haiku.png",
+        src: "haiku-cover.png",
         alt: "Cover of Haiku Hunt app",
       },
     ],
@@ -47,7 +47,7 @@ const projects = {
       "Focus on breakthroughs, not busywork",
     images_featured: [
       {
-        src: "cover-orbitl.png",
+        src: "orbitl-cover.png",
         alt: "Cover of Orbitl website",
       },
     ],
