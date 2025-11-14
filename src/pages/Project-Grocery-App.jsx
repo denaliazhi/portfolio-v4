@@ -7,7 +7,7 @@ import TwoCol from "../components/Two-Col";
 import OneCol from "../components/One-Col";
 import Accordion from "../components/Accordion";
 import ImageCaption from "../components/Image-Caption";
-import WordBlocks from "../components/WordBlocks";
+import ButtonBar from "../components/Button-Bar";
 
 export default function GroceryApp() {
   const project = projects.groceryShop;
@@ -305,53 +305,77 @@ export default function GroceryApp() {
           </Accordion>
         </OneCol>
         <hr />
-        <OneCol id="grocery-development">
+        <OneCol id="grocery-dev">
           <h2>Development</h2>
           <p>
-            Some of the challenges during
-            implementation were
+            This was my first time developing a
+            multi-page React app. For the sake of
+            brevity, I've described most of the
+            technical details in my{" "}
+            <a href="https://github.com/denaliazhi/esl-grocery-shop/tree/main?tab=readme-ov-file#%E2%80%8D-technical-details">
+              Github repository
+            </a>
+            .
           </p>
-          <WordBlocks
-            content={[
-              "Handling different routes within a single-page application",
-              "Translating the Figma design into React components",
-              "Representing English language with programming logic",
-              "Managing multiple states and side effects",
-              "Writing frontend tests",
-            ]}
-          />
           <p>
-            During this process, I rethought and
-            refactored my code several times. It
-            was difficult to move on, knowing that
-            the project still had great room for
-            improvement. However, I had a ways to
-            go in my journey with The Odin
-            Project, so I settled on “progress
-            over perfection.” Technical details
-            can be viewed on my Github repository:
+            The primary challenges to my
+            implementation were as follows:
           </p>
+          <ol>
+            <li>
+              Breaking the Figma design into React
+              components
+            </li>
+            <li>
+              Configuring navigation between
+              different routes
+            </li>
+            <li>
+              Managing states and side effects
+            </li>
+            <li>Dynamically narrating events</li>
+          </ol>
+          <p>
+            I refactored my code several times as
+            I read through the React docs,
+            discovering new concepts and best
+            practices. While I continued to see
+            room for improvement, I settled for
+            progress over perfection after about a
+            week.
+          </p>
+          <p>
+            I had a ways to go with The Odin
+            Project, but I was proud of what I
+            built:
+          </p>
+          <ButtonBar label="Check it out">
+            <a href="https://esl-grocery-shop.vercel.app/">
+              Demo
+            </a>
+            <a href="https://github.com/denaliazhi/esl-grocery-shop/tree/main?tab=readme-ov-file#%E2%80%8D-technical-details">
+              Github repository
+            </a>
+          </ButtonBar>
         </OneCol>
         <hr />
         <OneCol>
           <h2>Final Thoughts</h2>
           <p>
-            This app felt beyond the scope of what
-            I knew at the time. However, I was
-            able to prove to myself— as I did
+            This app felt beyond the scope of my
+            knowledge at the time that I planned
+            it. Ultimately, I proved— as I did
             throughout my web development journey—
-            that the challenges I thought were
+            that challenges I thought were
             “insurmountable” could in fact be
             surmounted with time and persistence.
           </p>
           <p>
-            I’m glad to have turned a generic
-            shopping cart into an accessible tool
-            for education, and I’d love to build
-            on this theme through future products.
+            In the future, I'd love to build a set
+            of accessible educational tools like
+            this one.
           </p>
         </OneCol>
-        <hr />
       </article>
     </PageTemplate>
   );

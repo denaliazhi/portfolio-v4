@@ -612,6 +612,62 @@ footer p:hover {
   margin: 1rem 0;
 }
 
+.project-page p > a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--lighter-main);
+}
+
+.project-page p > a:hover {
+  text-decoration-color: var(--main);
+}
+
+/* --------------- Button Bar --------------- */
+
+.button-bar {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(var(--brown), 0.1);
+  border-radius: var(--rounded);
+
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button-bar p {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-bar p::before {
+  display: inline-block;
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.button-bar a {
+  font-family: var(--sans-serif);
+  font-size: small;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--main);
+  border-radius: var(--rounded);
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+}
+
+.button-bar a:hover {
+  transform: scale(105%);
+}
+
 /* --------------- Carousel --------------- */
 
 .carousel,
@@ -740,7 +796,7 @@ footer p:hover {
 }
 
 .one-col li {
-  margin-left: 1rem;
+  margin-left: 2rem;
   padding-left: 1rem;
 }
 
@@ -829,6 +885,10 @@ footer p:hover {
 #grocery-design .accordion-body > .two-col {
   gap: 1.5rem;
   margin: 1rem 0;
+}
+
+#grocery-dev .button-bar p::before {
+  background-image: url("/icons/search.png");
 }
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
