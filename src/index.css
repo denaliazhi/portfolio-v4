@@ -95,10 +95,6 @@ h3 {
   background-repeat: no-repeat;
 }
 
-img {
-  height: auto;
-}
-
 /* Text Styles */
 .highlight {
   background-color: rgb(255, 227, 190);
@@ -594,6 +590,10 @@ footer p:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.project-page img {
+  height: auto;
 }
 
 .project-page h1 {
