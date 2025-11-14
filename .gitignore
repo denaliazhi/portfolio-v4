@@ -25,3 +25,7 @@ dist-ssr
 
 
 eslint.config.js
+package-lock.json
+
+# Add back later
+README.md
