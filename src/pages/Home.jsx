@@ -10,7 +10,11 @@ export default function Home() {
     <>
       <PageTemplate className="home">
         <Hero />
-        <ProjectsContainer content={projects} />
+        <hr />
+        <ProjectsContainer
+          heading="My latest projects"
+          content={projects}
+        />
         {/* <Marquee />
         <Pitch /> */}
       </PageTemplate>

@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [isAnimating, setIsAnimating] =
     useState(false);
   const handleClick = () => {
-    setIsAnimating(!isAnimating);
+    !isAnimating && setIsAnimating(true);
   };
+
+  useEffect(() => {
+    if (isAnimating) {
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 5000);
+    }
+  }, [isAnimating]);
 
   return (
     <>
@@ -21,24 +29,29 @@ export default function Hero() {
           <div
             className={
               isAnimating
-                ? "greeting slide-down"
+                ? "greeting sliding"
                 : "greeting"
             }
             onClick={handleClick}
           >
             <h1>hi</h1>
-            <span id="waving-hand"></span>
+            <span id="greeting-hand"></span>
+            <span className="speech-bubble">
+              {isAnimating
+                ? "Weeee!"
+                : "Mind giving me a push?"}
+            </span>
           </div>
         </div>
         <div className="hero-text">
           <h1>My name is</h1>
           <h1>
             Denalia Z
-            <span className="dotted-text">
+            <span className="letter-placeholder">
               hi
             </span>
           </h1>
-          <h2>Designer & Developer</h2>
+          <h2>Designer + Developer</h2>
           {/* Swap on click, change flex order */}
         </div>
       </section>

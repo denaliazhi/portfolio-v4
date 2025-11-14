@@ -2,7 +2,7 @@ const projects = {
   groceryShop: {
     title: "ESL Grocery Shop",
     desc_short:
-      "A narrative app for English learners",
+      "A narrative app for ESL students",
     desc_long: `I built a narrative app to help English as a Second Language (ESL) 
       students navigate the grocery store and gain confidence in their everyday lives.`,
     images_featured: [
@@ -24,13 +24,12 @@ const projects = {
       },
     ],
     images_supporting: [],
-    type: "Personal project",
+    type: ["Personal project", "Web dev"],
     tools: ["React"],
   },
   haikuHunt: {
     title: "Haiku Hunt",
-    desc_short:
-      "A poetic, open-source scavenger hunt",
+    desc_short: "A poetic scavenger hunt",
     images_featured: [
       {
         src: "haiku-cover.png",
@@ -38,13 +37,13 @@ const projects = {
       },
     ],
     images_supporting: [],
-    type: "Personal project",
+    type: ["Personal project", "Web dev"],
     tools: ["Node", "Express", "PostgreSQL"],
   },
   orbitl: {
     title: "Orbitl",
     desc_short:
-      "Focus on breakthroughs, not busywork",
+      "A science startup's landing page",
     images_featured: [
       {
         src: "orbitl-cover.png",
@@ -52,7 +51,7 @@ const projects = {
       },
     ],
     images_supporting: [],
-    type: "Client project",
+    type: ["Client project", "Design"],
     tools: ["Wordpress"],
   },
 };

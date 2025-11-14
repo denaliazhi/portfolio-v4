@@ -54,18 +54,18 @@ export default function GroceryApp() {
                 frustration as they tried to learn
                 a new language.{" "}
                 <span className="highlight">
-                  A crucial part of keeping them
-                  invested in the process was to
-                  connect our lessons to their
-                  everyday lives.
+                  Crucial to their investment in
+                  the process was the connection
+                  of our lessons to their everyday
+                  lives.
                 </span>
               </p>
               <p>
                 I used various strategies to build
                 real world context in the
-                classroom, but at times, I felt
-                like the resources that I had were
-                insufficient.
+                classroom, but I sometimes wished
+                for better tools than the ones
+                afforded to me.
               </p>
             </>
           }
@@ -82,7 +82,7 @@ export default function GroceryApp() {
         />
         <hr />
         <OneCol>
-          <h2>The (Original Task)</h2>
+          <h2>The (Original) Task</h2>
           <p>
             Some months into learning web
             development with The Odin Project, I
@@ -108,13 +108,14 @@ export default function GroceryApp() {
           <h2>My Twist</h2>
           <p>
             Inspired by my teaching experience, I
-            decided to{" "}
+            decided to turn the shopping cart into
+            a narrative app about grocery shopping
+            that could{" "}
             <span className="highlight">
-              turn the shopping cart into a
-              narrative app about grocery shopping
-            </span>{" "}
-            that might benefit ESL students and
-            teachers.
+              address the needs of ESL students
+              and teachers
+            </span>
+            .
           </p>
           <h3>Benefits for students</h3>
           <Accordion
@@ -177,11 +178,11 @@ export default function GroceryApp() {
           <p>
             The user would start the lesson
             outside of the store. Once inside,
-            they’d be able to navigate between
-            grocery sections and add items to
-            their cart. When they were done
-            shopping, they’d be able to check out
-            and review their receipt.
+            they'd navigate between grocery
+            sections and add the items they
+            desired to their cart. When they were
+            done shopping, they'd check out and
+            review their receipt.
           </p>
           <p>
             To visualize the user flow and
@@ -225,9 +226,10 @@ export default function GroceryApp() {
                 realistic online store could mimic
                 that action by requiring the user
                 to drag and drop images of
-                products. However, most users have
-                learned to click on an "Add to
-                cart" button instead.
+                products. However, most users are
+                accustomed now to clicking on a
+                simpler "Add to cart" button
+                instead.
               </p>
             </aside>
             <p>
@@ -273,7 +275,7 @@ export default function GroceryApp() {
               convoluting the shopping experience.
             </p>
           </Accordion>
-          <Accordion heading="How do I convey the app’s educational value?">
+          <Accordion heading="How do I convey the app's educational value?">
             <p>
               I would create context in two ways.
               First, the main content would be
@@ -338,8 +340,8 @@ export default function GroceryApp() {
           <p>
             I continuously refactored my code as I
             discovered new concepts and best
-            practices. After about a week, I
-            brought my design into reality.
+            practices. After about a week, I was
+            able to bring my design into reality.
           </p>
           <ButtonBar label="Check it out">
             <a href="https://esl-grocery-shop.vercel.app/">
@@ -354,22 +356,19 @@ export default function GroceryApp() {
         <OneCol>
           <h2>Final Thoughts</h2>
           <p>
-            When I first planned this app, it felt
-            beyond the scope of my knowledge. I
-            gained a lot of confidence in my
-            abilities to overcome learning
-            barriers through time and persistence.
-            While I always see room for
-            improvement, I ultimately chose
-            "progress over perfection" and moved
-            along with The Odin Project.
+            When I first planned this app, my
+            vision for it felt beyond my skills at
+            the time. As I progressed, I gained
+            confidence in my abilities to overcome
+            any learning barriers that I faced
+            with the resources that I had.
           </p>
           <p>
-            I found the modified premise of this
-            app to be deeply fulfilling. In the
-            future, I'd love to build a set of
-            accessible educational tools like this
-            one.
+            I enjoyed turning the original premise
+            into one that felt more fulfilling to
+            me. In the future, I'd love to build a
+            suite of accessible educational tools
+            like this one.
           </p>
         </OneCol>
       </article>
