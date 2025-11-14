@@ -207,9 +207,9 @@ export default function GroceryApp() {
             <p>
               A realistic store interface could
               help students translate the lesson
-              to their own lives. At the same
+              to their physical world. At the same
               time, digital realism might confuse
-              them if they're used to the
+              users if they're used to the
               abstraction of online shopping.
             </p>
             <aside>
@@ -310,7 +310,7 @@ export default function GroceryApp() {
           <p>
             This was my first time developing a
             multi-page React app. For the sake of
-            brevity, I've described most of the
+            brevity, I've kept most of the
             technical details in my{" "}
             <a href="https://github.com/denaliazhi/esl-grocery-shop/tree/main?tab=readme-ov-file#%E2%80%8D-technical-details">
               Github repository
@@ -318,7 +318,7 @@ export default function GroceryApp() {
             .
           </p>
           <p>
-            The primary challenges to my
+            My primary challenges to
             implementation were as follows:
           </p>
           <ol>
@@ -336,18 +336,10 @@ export default function GroceryApp() {
             <li>Dynamically narrating events</li>
           </ol>
           <p>
-            I refactored my code several times as
-            I read through the React docs,
-            discovering new concepts and best
-            practices. While I continued to see
-            room for improvement, I settled for
-            progress over perfection after about a
-            week.
-          </p>
-          <p>
-            I had a ways to go with The Odin
-            Project, but I was proud of what I
-            built:
+            I continuously refactored my code as I
+            discovered new concepts and best
+            practices. After about a week, I
+            brought my design into reality.
           </p>
           <ButtonBar label="Check it out">
             <a href="https://esl-grocery-shop.vercel.app/">
@@ -362,18 +354,22 @@ export default function GroceryApp() {
         <OneCol>
           <h2>Final Thoughts</h2>
           <p>
-            This app felt beyond the scope of my
-            knowledge at the time that I planned
-            it. Ultimately, I proved— as I did
-            throughout my web development journey—
-            that challenges I thought were
-            “insurmountable” could in fact be
-            surmounted with time and persistence.
+            When I first planned this app, it felt
+            beyond the scope of my knowledge. I
+            gained a lot of confidence in my
+            abilities to overcome learning
+            barriers through time and persistence.
+            While I always see room for
+            improvement, I ultimately chose
+            "progress over perfection" and moved
+            along with The Odin Project.
           </p>
           <p>
-            In the future, I'd love to build a set
-            of accessible educational tools like
-            this one.
+            I found the modified premise of this
+            app to be deeply fulfilling. In the
+            future, I'd love to build a set of
+            accessible educational tools like this
+            one.
           </p>
         </OneCol>
       </article>
