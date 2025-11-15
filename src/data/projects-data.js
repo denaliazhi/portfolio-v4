@@ -23,22 +23,26 @@ const projects = {
         alt: "Target audience",
       },
     ],
-    images_supporting: [],
-    type: ["Personal project", "Web dev"],
+    type: ["Personal project", "Frontend"],
     tools: ["React"],
   },
   haikuHunt: {
     title: "Haiku Hunt",
     desc_short: "A poetic scavenger hunt",
+    desc_long:
+      "I built a platform where users guess landmarks around NYC based on haiku clues and then contribute poems of their own.",
     images_featured: [
       {
         src: "haiku-cover.png",
         alt: "Cover of Haiku Hunt app",
       },
+      {
+        src: "haiku-feature-1.png",
+        alt: "Key features",
+      },
     ],
-    images_supporting: [],
-    type: ["Personal project", "Web dev"],
-    tools: ["Node", "Express", "PostgreSQL"],
+    type: ["Personal project", "Fullstack"],
+    tools: ["Express", "PostgreSQL"],
   },
   orbitl: {
     title: "Orbitl",
@@ -50,9 +54,12 @@ const projects = {
         alt: "Cover of Orbitl website",
       },
     ],
-    images_supporting: [],
-    type: ["Client project", "Design"],
-    tools: ["Wordpress"],
+    type: [
+      "Client project",
+      "Design",
+      "Frontend",
+    ],
+    tools: ["Wordpress", "HTML", "CSS"],
   },
 };
 

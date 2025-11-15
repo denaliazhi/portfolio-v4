@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import GroceryApp from "./pages/Project-Grocery-App";
+import HaikuHunt from "./pages/Project-Haiku-Hunt";
 
 const routes = [
   {
@@ -9,6 +10,10 @@ const routes = [
   {
     path: "/ESL-Grocery-Shop",
     element: <GroceryApp />,
+  },
+  {
+    path: "/Haiku-Hunt",
+    element: <HaikuHunt />,
   },
 ];
 

@@ -635,7 +635,7 @@ footer p:hover {
 .tags {
   list-style: none;
   display: flex;
-  gap: 0.2rem;
+  gap: 0.3rem;
   flex-wrap: wrap;
 }
 
@@ -643,8 +643,13 @@ footer p:hover {
   font-size: small;
   width: max-content;
   padding: 0.3rem 0.7rem;
-  border: 2px solid var(--main);
   border-radius: var(--rounded);
+  background-color: rgba(var(--brown), 0.1);
+}
+
+/* --------------- Home Page: Callout --------------- */
+.home .callout {
+  max-width: 64rem;
 }
 
 /* --------------- Project Page --------------- */
@@ -922,23 +927,6 @@ footer p:hover {
   border-bottom-right-radius: var(--rounded);
 }
 
-/* ------------ Word Blocks ------------- */
-
-.word-blocks {
-  margin: 1rem 0;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.word-blocks p {
-  flex: 1 1 30%;
-  font-size: small;
-  padding: 1.5rem;
-  border-radius: var(--rounded);
-  background-color: rgba(var(--brown), 0.1);
-}
-
 /* --------------- Project Page: Grocery App --------------- */
 #grocery-twist h3 {
   margin-top: 1rem;
@@ -965,6 +953,11 @@ footer p:hover {
   background-image: url("/icons/search.png");
 }
 
+/* --------------- Project Page: Haiku Hunt --------------- */
+.haiku-hunt .accordion li,
+.haiku-hunt .accordion .tags {
+  margin: 0;
+}
 /* --------------- MEDIUM SIZE DEVICE --------------- */
 
 @media (max-width: 600px) {

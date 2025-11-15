@@ -64,8 +64,8 @@ export default function GroceryApp() {
                 I used various strategies to build
                 real world context in the
                 classroom, but I sometimes wished
-                for better tools than the ones
-                afforded to me.
+                for better tools than the ones I
+                had.
               </p>
             </>
           }
@@ -85,9 +85,16 @@ export default function GroceryApp() {
           <h2>The (Original) Task</h2>
           <p>
             Some months into learning web
-            development with The Odin Project, I
-            reached an assignment to build a mock
-            shopping cart 🛒 with React.{" "}
+            development with{" "}
+            <a href="https://www.theodinproject.com/about">
+              The Odin Project
+            </a>
+            , I reached an assignment to build a
+            mock{" "}
+            <a href="https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart">
+              shopping cart
+            </a>{" "}
+            🛒 with React.{" "}
           </p>
           <p>The requirements were as follows:</p>
           <ol>

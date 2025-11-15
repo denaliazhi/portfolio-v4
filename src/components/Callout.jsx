@@ -10,15 +10,17 @@ export default function Callout({
           backgroundImage: `url('/icons/${icon}.png')`,
         }}
       ></div>
-      <div className="callout-content">
-        {content.heading && (
-          <h3>{content.heading}</h3>
-        )}
-        {content.body &&
-          content.body.map((paragraph) => (
-            <p>{paragraph}</p>
-          ))}
-      </div>
+      {content && (
+        <div className="callout-content">
+          {content.heading && (
+            <h3>{content.heading}</h3>
+          )}
+          {content.body &&
+            content.body.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+        </div>
+      )}
     </section>
   );
 }
