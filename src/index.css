@@ -667,6 +667,8 @@ footer p:hover {
 
 .project-page img {
   height: auto;
+  width: 100%;
+  border-radius: var(--rounded);
 }
 
 .project-page h1 {
@@ -954,10 +956,43 @@ footer p:hover {
 }
 
 /* --------------- Project Page: Haiku Hunt --------------- */
+
 .haiku-hunt .accordion li,
 .haiku-hunt .accordion .tags {
   margin: 0;
 }
+
+#haiku-data table {
+  border: 1px solid var(--lighter-main);
+}
+#haiku-data caption {
+  padding: 0.3rem;
+  background-color: rgba(var(--brown), 0.1);
+}
+#haiku-data table {
+  border-collapse: collapse;
+  font-size: small;
+  text-align: left;
+}
+#haiku-data th,
+#haiku-data td {
+  border-left: 1px solid var(--lighter-main);
+}
+#haiku-data th {
+  padding: 0.5rem 0 0 1rem;
+}
+#haiku-data td {
+  padding: 0 0 0.5rem 1rem;
+}
+
+#haiku-data h3,
+#haiku-dev h3 {
+  margin-top: 1rem;
+}
+#haiku-data img {
+  margin: 1rem 0;
+}
+
 /* --------------- MEDIUM SIZE DEVICE --------------- */
 
 @media (max-width: 600px) {
@@ -969,6 +1004,7 @@ footer p:hover {
 
   main,
   main.project-page {
+    max-width: 100%;
     padding: 1.5rem 1rem;
   }
 
@@ -1106,8 +1142,9 @@ footer p:hover {
 
   /* -------- Project Page --------- */
   .project-page {
-    padding: 0 0.5rem;
+    margin-top: 15%;
   }
+
   .project-page h1 {
     font-size: 2rem;
   }
