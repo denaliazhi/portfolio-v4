@@ -39,12 +39,12 @@ export default function HaikuHunt() {
                   cone."
                 </p>
                 <p>
-                  We didn't collect any tangibles.
-                  Observation was all it took to
-                  play.{" "}
+                  All it took to play was
+                  observation, yet even{" "}
                   <span className="highlight">
-                    In mundane moments, we found
-                    occasions to celebrate.
+                    in the most mundane
+                    discoveries, we found reasons
+                    to celebrate.
                   </span>{" "}
                   That sentiment inspired Haiku
                   Hunt.
@@ -122,12 +122,14 @@ export default function HaikuHunt() {
             <h2>My Twist</h2>
             <p>
               I decided to merge the above
-              assignments into one complete and
-              polished product. I imagined an app
-              that was part-poetry forum,
-              part-scavenger hunt— an homage to
-              New York City that could be enjoyed
-              by locals and outsiders alike.
+              assignments into a more polished
+              product. I imagined an app that was{" "}
+              <span className="highlight">
+                part-poetry forum, part-scavenger
+              </span>{" "}
+              hunt— an homage to New York City
+              that could be enjoyed by locals and
+              outsiders alike.
             </p>
           </OneCol>
           <hr />
@@ -138,54 +140,79 @@ export default function HaikuHunt() {
               <a href="https://data.cityofnewyork.us/Recreation/NYC-Parks-Monuments/6rrm-vxj9/about_data">
                 NYC Parks Monuments (NPM) dataset
               </a>{" "}
-              as a starter source because it had a
-              number of fields that could serve as
-              details for scavenger hunt "items."
-              These fields included the names,
-              locations, and descriptions of
-              landmarks around the city.
+              as a starter source. It had a number
+              of fields that could serve as
+              details for scavenger hunt "items,"
+              including the locations and
+              dedicated dates of landmarks around
+              the city.
             </p>
             <table>
               <caption>About the dataset</caption>
-              <thead>
-                <tr>
-                  <th>Rows</th>
-                  <th>Columns</th>
-                  <th>Each row is a</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>3,762</td>
-                  <td>34</td>
-                  <td>
-                    monument maintained by NYC
-                    Parks
-                  </td>
-                </tr>
-              </tbody>
+              <div>
+                <thead>
+                  <tr>
+                    <th>Rows</th>
+                    <th>Columns</th>
+                    <th>Each row is a</th>
+                    <th>Sample fields</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>3,762</td>
+                    <td>34</td>
+                    <td>
+                      monument maintained by NYC
+                      Parks
+                    </td>
+                    <td>
+                      <ul>
+                        <li>name</li>
+                        <li>parkname</li>
+                        <li>location</li>
+                        <li>architect</li>
+                        <li>dedicated</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </div>
             </table>
             <p>
-              At first, the names of the landmarks
-              would be hidden, and users would
-              guess them based on clues written in
-              the form of haikus. This set-up
-              meant that I'd need to write an
-              initial clue for each landmark.
+              Each landmark would need an initial
+              clue for users to guess, so I
+              subsetted the data to make the work
+              easier on myself. I would target
+              only monuments that were
+              "fountains."
             </p>
-            <p>
-              To make this task easier for myself,
-              I would take a subset of the data.
-              My criteria would be monuments that
-              were "fountains" for which there
-              were about 50 rows.
-            </p>
+            <aside>
+              <p class="bold">Why fountains?</p>
+              <p>
+                My reasons for this criteria are
+                personal and practical. First, I
+                have a friend who likes fountains.
+                Second, fountains are some of the
+                more popular landmarks in NYC
+                Parks (the scope of this dataset).
+                Third, I find it easier to write
+                poems about fountains than about
+                statues, portraits, or plaques.
+                Sorry, "
+                <a href="https://www.nycgovparks.org/parks/madison-square-park/monuments/55">
+                  Chester Alan Arthur
+                </a>
+                ."
+              </p>
+            </aside>
             <h3>Designing the schema</h3>
             <p>
               To start, I planned two tables for
               my database: Landmarks and Clues.
-              Later on, I'd modify the schema to
-              capture user-specific data.{" "}
+              Later on, I'd add user-specific
+              tables so that I could implement a
+              login screen and user dashboard.{" "}
             </p>
             <img
               src="projects/haiku-er-diagram.jpg"
@@ -194,40 +221,44 @@ export default function HaikuHunt() {
               width="756"
             />
             <p>
-              Whenever I wanted to add a new table
-              or columns, I'd rerun my
-              initialization script, which would
-              drop and recreate all tables.
-              However, a different approach would
-              be required in a production-level
-              environment where existing data
-              should be retained.
+              Whenever I wanted to modify the
+              schema, I'd simply rerun my set-up
+              script to overwite the existing
+              tables. However, a production-level
+              app would require a different
+              approach.
             </p>
             <h3>Extracting the data</h3>
             <p>
-              To get the data into my tables, I
-              queried the NPM dataset via the
-              Socrata Open Data API. During this
-              process, I figured out how to
+              To populate my tables, I queried the
+              NPM dataset via the{" "}
+              <a href="https://dev.socrata.com/foundry/data.cityofnewyork.us/6rrm-vxj9">
+                Socrata Open Data API
+              </a>
+              . During this process, I had to
+              figure out how to
             </p>
-            <ol>
+            <ul>
               <li>
                 Format query parameters using
                 Socrata Query Language (SoQL)
               </li>
-              <li>Decode a ReadableStream</li>
+              <li>
+                Decode a{" "}
+                <code>ReadableStream</code>
+              </li>
               <li>
                 Paginate through results without
                 pagination metadata
               </li>
-            </ol>
+            </ul>
             <h3>Transforming the data</h3>
             <p>
               Next, I performed an exploratory
               analysis on the data and handled
               inconsistencies:
             </p>
-            <ol>
+            <ul>
               <li>Removing duplicate rows</li>
               <li>
                 Removing rows that didn't meet the
@@ -245,46 +276,47 @@ export default function HaikuHunt() {
                 Standardizing values in
                 categorical columns
               </li>
-            </ol>
+            </ul>
           </OneCol>
           <hr />
-          <OneCol>
+          <OneCol id="haiku-design">
             <h2>Design</h2>
             <p>
-              I kept the interface relatively
-              simple in order to focus on backend
-              concepts. The main view would
-              display a grid of cards. Clicking on
-              a card would reveal all clues and
-              details for a landmark. Users who
-              correctly guessed the landmark's
-              name would then get to submit their
-              own clues through a form.{" "}
+              I kept the design relatively simple.
+              Top-level navigation would be shown
+              in a sidebar on the left, and users
+              would be able to drill down into the
+              main content on the right.{" "}
             </p>
-            <aside>
-              In these mockups, the app is titled
-              "Fifty Fountains" due to the subset
-              of NPM data that I used to populate
+            <ImageCaption
+              imageStyle="modern"
+              image={{
+                src: "projects/haiku-mockups.png",
+                alt: "Mockups for the app",
+                caption: `In these mockups, the app is titled
+              "Fifty Fountains" due to the subset that I used to populate
               the database. After considering
-              scalability, I'd change the name to
-              "Haiku Hunt."
-            </aside>
-            <img
-              src="projects/haiku-mockups.png"
-              alt="Mockups for the app"
-              height="286"
-              width="756"
+              scalability, I changed the name to
+              "Haiku Hunt."`,
+              }}
+              dimensions={{
+                height: "286",
+                width: "756",
+              }}
             />
             <p>
               Unlike my{" "}
               <a href="/ESL-Grocery-Shop">
                 ESL Grocery Shop
               </a>{" "}
-              app, where I'd scaled down all of
-              the content to fit on mobile
-              devices, I prioritized a responsive
-              layout that could adjust to
-              different screen widths.
+              app, where I'd scaled the entire
+              view to fit it on mobile devices, I
+              prioritized a{" "}
+              <span className="highlight">
+                responsive layout
+              </span>{" "}
+              that could adjust to different
+              screen widths.
             </p>
             <img
               src="/projects/haiku-responsive-design.gif"
@@ -296,77 +328,116 @@ export default function HaikuHunt() {
             <h2>Development</h2>
             <h3>Approach</h3>
             <p>
-              During this phase, I took an
-              incremental approach to development.
-              For each view, I would
+              I developed the app in rough
+              increments, meaning that for each
+              feature I would
             </p>
             <ol>
               <li>
-                Write the queries to retrieve the
-                required data{" "}
+                Write queries to retrieve the
+                required data
               </li>
               <li>
-                Build the barebones features to
+                Build the basic structure to
                 display that data
               </li>
               <li>
-                Style the view to match the mockup
+                Add logic to handle user events
               </li>
-              <li>Repeat for the next view.</li>
+              <li>
+                Style the view to match its mockup
+              </li>
             </ol>
             <p>
-              Following this process, I targeted
-              first the results page, then the
-              landmark details page, then the clue
-              submission form. Finally, I added
-              user login and user dashboard. This
-              way the app was usable at each stage
-              with increasing levels of
-              functionality.
+              I started with the main page,
+              containing all landmark cards. Then,
+              I worked on the details page for a
+              single landmark. Then, I worked on
+              the clue submission form. Finally, I
+              added the user login and user
+              dashboard.
             </p>
             <h3>Challenges</h3>
             <p>
-              My primary challenges to
-              implementation were as follows:
+              My biggest challenge was{" "}
+              <span className="highlight">
+                keeping the code organized
+              </span>{" "}
+              as the app grew. I spent quite a
+              while renaming files, grouping
+              related files into folders, and
+              extracting re-usable snippets of
+              code to improve the readability of
+              my project. I trust that this
+              process will become more intuitive
+              with time and practice.
             </p>
-            <Accordion heading="Keeping code organized">
-              Between the routes, controllers, and
-              EJS templates, I began to feel like
-              my code was disorganized and had to
-              refactor several times to make the
-              naming and nesting more
-              intuitive.Determining route names.
-              Sometimes actions might be
-              associated with user or landmark,
-              how to name the route?
-            </Accordion>
-            <Accordion heading="Dynamically rendering the frontend">
-              EJS felt painfully tedious to write
-              compared to React. I started
-              breaking it out into partials like
-              components. I learned afterwards
-              about separating the frontend and
-              backend utilizing RESTful API to
-              communicate between the two.
-            </Accordion>
-            <Accordion heading="Expanding the schema">
-              Re-planning / updating database as
-              needs changed
-            </Accordion>
+            <p>
+              Another challenge was implementing
+              middleware for the first time, such
+              as <code>passport-local</code> to
+              authenticate users and{" "}
+              <code>express-validator</code> to
+              validate clue submissions.
+            </p>
             <h3>Future objectives</h3>
             <p>
-              There are a lot of features I'd love
-              to implement and ways to improve the
-              app. If I were to work more on this
-              app, I would add the ability for
-              users to submit new landmarks so
-              that there wouldn't be the issue of
-              landmarks in a state of Catch-22
-              (where users had no clues to guess
-              the landmark, thus no users could
-              write clues). I'd want to rebuild it
-              with react on the frontend.
+              During development, I seemed to
+              generate an ever-growing list of
+              potential features and improvements.
+              Two items of particular interest to
+              me are
             </p>
+            <Accordion
+              heading="Addressing the Catch-22 of Landmark Clues"
+              startOpen={true}
+            >
+              <p>
+                It turns out that writing haikus
+                for fifty fountains is too much
+                work for one person (me). As a
+                result, any landmarks without
+                clues can't be solved by users— at
+                least not by the rules of the
+                game— but only users who have
+                solved the landmarks can
+                contribute clues...
+              </p>
+              <p>
+                To fix this Catch-22, I'd remove
+                the clueless landmarks and{" "}
+                <span className="highlight">
+                  add a form through which users
+                  could submit new landmarks
+                </span>{" "}
+                for others to guess. The form
+                would require submissions to
+                include an initial clue.
+              </p>
+            </Accordion>
+            <Accordion heading="Rebuilding the frontend with React and REST API">
+              <p>
+                When writing EJS templates, I
+                found myself breaking out the code
+                into partials which I'd then{" "}
+                <code>
+                  &lt;%- include() %&gt;
+                </code>{" "}
+                in multiple files, similar to
+                React's component-style
+                architecture. However, the overall
+                effect of the former felt more
+                tedious and less readable than the
+                latter.
+              </p>
+              Later on, I learned about the
+              "Jamstack," leveraging REST APIs to
+              connect separate frontend and
+              backend implementations. With this
+              knowledge, I'd like to rebuild my
+              app utilizing React for the
+              frontend.
+            </Accordion>
             <ButtonBar label="Check it out">
               <a href="https://haiku-hunt.koyeb.app/">
                 Demo
@@ -380,11 +451,18 @@ export default function HaikuHunt() {
           <OneCol>
             <h2>Final Thoughts</h2>
             <p>
-              This app is a marker of how far I've
-              come since writing my first recipe
-              website at the start of this web
-              development journey. I'm excited to
-              keep learning and building.
+              A few months ago, I was writing{" "}
+              <a href="https://denaliazhi.github.io/odin-recipes/">
+                static websites
+              </a>{" "}
+              in pure HTML and CSS. I'm proud of
+              how much I've learned to reach this
+              point of building full-stack web
+              apps. At the same time, I realize
+              more than ever how much I have yet
+              to learn. The future is at once
+              promising, uncertain, daunting, and
+              exciting. Mostly exciting. 🙂
             </p>
           </OneCol>
         </article>

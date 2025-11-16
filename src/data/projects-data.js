@@ -30,7 +30,7 @@ const projects = {
     title: "Haiku Hunt",
     desc_short: "A poetic scavenger hunt",
     desc_long:
-      "I built a platform where users guess landmarks around NYC based on haiku clues and then contribute poems of their own.",
+      "I built a platform where users guess landmarks based on haiku clues and then write poems of their own.",
     images_featured: [
       {
         src: "haiku-cover.png",

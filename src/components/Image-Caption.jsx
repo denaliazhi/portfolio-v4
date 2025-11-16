@@ -1,6 +1,10 @@
 export default function ImageCaption({
   image,
   imageStyle = "scrapbook",
+  dimensions = {
+    height: 200,
+    width: "auto",
+  },
 }) {
   return (
     <figure
@@ -9,7 +13,8 @@ export default function ImageCaption({
       <img
         src={image.src}
         alt={image.alt}
-        height="200"
+        height={dimensions.height}
+        width={dimensions.width}
       />
       <figcaption>{image.caption}</figcaption>
     </figure>

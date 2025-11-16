@@ -117,6 +117,11 @@ aside {
   flex-direction: column;
   gap: 0.5rem;
 }
+code {
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(var(--brown), 0.1);
+  border-radius: var(--rounded);
+}
 
 /* Animations */
 
@@ -979,18 +984,24 @@ footer p:hover {
   border-left: 1px solid var(--lighter-main);
 }
 #haiku-data th {
-  padding: 0.5rem 0 0 1rem;
+  padding: 0.5rem 0.8rem 0;
 }
 #haiku-data td {
-  padding: 0 0 0.5rem 1rem;
+  vertical-align: top;
+  padding: 0.5rem 0.8rem;
 }
 
 #haiku-data h3,
 #haiku-dev h3 {
   margin-top: 1rem;
 }
+
 #haiku-data img {
   margin: 1rem 0;
+}
+
+#haiku-design > p:last-of-type {
+  margin-top: 1rem;
 }
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
@@ -1186,6 +1197,20 @@ footer p:hover {
   /* -------- Button Bar --------- */
   .button-bar a {
     width: 100%;
+  }
+
+  /* ------------ Project Page: Haiku Hunt ------------- */
+  #haiku-data table > div,
+  #haiku-data tr {
+    display: flex;
+  }
+
+  #haiku-data tr {
+    flex-direction: column;
+  }
+  #haiku-data th,
+  #haiku-data td {
+    padding: 0.5rem 0.7rem;
   }
 }
 
