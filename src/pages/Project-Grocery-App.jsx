@@ -9,13 +9,15 @@ import OneCol from "../components/One-Col";
 import Accordion from "../components/Accordion";
 import ImageCaption from "../components/Image-Caption";
 import ButtonBar from "../components/Button-Bar";
+import { useRef } from "react";
 
 export default function GroceryApp() {
   const project = projects.groceryShop;
+  const articleRef = useRef(null);
 
   return (
     <PageTemplate className="grocery-app project-page">
-      <article>
+      <article ref={articleRef}>
         <ProjectHeader
           title={project.title}
           date={project.date}
@@ -37,7 +39,7 @@ export default function GroceryApp() {
           }}
         />
         <TwoCol
-          id="grocery-background"
+          id="background"
           ratio={[3, 2]}
           col1={
             <>
@@ -84,7 +86,7 @@ export default function GroceryApp() {
           }
         />
         <hr />
-        <OneCol id="grocery-task">
+        <OneCol id="task">
           <h2>The (Original) Task</h2>
           <p>
             Some months into learning web
@@ -114,7 +116,7 @@ export default function GroceryApp() {
           </ol>
         </OneCol>
         <hr />
-        <OneCol id="grocery-take">
+        <OneCol id="take">
           <h2>My Take</h2>
           <p>
             Inspired by my teaching experience, I
@@ -169,7 +171,7 @@ export default function GroceryApp() {
           </Accordion>
         </OneCol>
         <hr />
-        <OneCol id="grocery-design">
+        <OneCol id="design">
           <h2>Design</h2>
           <p>
             I planned out a{" "}
@@ -317,7 +319,7 @@ export default function GroceryApp() {
           </Accordion>
         </OneCol>
         <hr />
-        <OneCol id="grocery-development">
+        <OneCol id="development">
           <h2>Development</h2>
           <p>
             This was my first time developing a
@@ -363,7 +365,7 @@ export default function GroceryApp() {
           </ButtonBar>
         </OneCol>
         <hr />
-        <OneCol id="grocery-thoughts">
+        <OneCol id="thoughts">
           <h2>Final Thoughts</h2>
           <p>
             When I first planned this app, my
@@ -403,6 +405,7 @@ export default function GroceryApp() {
           "Development",
           "Final Thoughts",
         ]}
+        articleRef={articleRef}
       />
     </PageTemplate>
   );

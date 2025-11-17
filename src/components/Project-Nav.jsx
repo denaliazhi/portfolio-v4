@@ -1,38 +1,56 @@
 import { useState } from "react";
 
 export default function ProjectNav({
-  anchorBase,
   sections,
+  articleRef,
 }) {
-  const [selected, setSelected] = useState();
-  console.log(selected);
+  const [activeSection, setActiveSection] =
+    useState(null);
+  if (activeSection) {
+    // Update URL hash based on active section of article
+    history.pushState(
+      null,
+      "",
+      "#" + activeSection
+    );
+  }
+
+  // Update active section if nav clicked
   function handleClick(e) {
+    e.preventDefault();
     const identifier = e.target.id.replace(
       "-anchor",
       ""
     );
-    setSelected(identifier);
+    const sectionNode =
+      articleRef.current.querySelector(
+        `#${identifier}`
+      );
+    sectionNode.scrollIntoView({
+      behavior: "smooth",
+    });
+    setActiveSection(identifier);
   }
 
+  // Create id for anchor link based on section name
   function createAnchor(name) {
-    return `${anchorBase}-${name
-      .split(" ")
-      .at(-1)
-      .toLowerCase()}`;
+    return name.split(" ").at(-1).toLowerCase();
   }
+
   return (
     <nav className="project-nav">
       <h2>Table of contents</h2>
       <ul>
         {sections.map((heading) => {
           let anchorLink;
+          // Section has subheadings
           if (Array.isArray(heading)) {
             anchorLink = createAnchor(heading[0]);
             return (
               <li
                 key={anchorLink}
                 className={
-                  anchorLink === selected
+                  anchorLink === activeSection
                     ? "selected-anchor"
                     : null
                 }
@@ -44,6 +62,7 @@ export default function ProjectNav({
                 >
                   {heading[0]}
                 </a>
+                {/* Nest subheadings under heading */}
                 <ul>
                   {heading[1].map(
                     (subheading) => {
@@ -57,7 +76,8 @@ export default function ProjectNav({
                         >
                           <li
                             className={
-                              subLink === selected
+                              subLink ===
+                              activeSection
                                 ? "selected-anchor"
                                 : null
                             }
@@ -72,6 +92,7 @@ export default function ProjectNav({
                 </ul>
               </li>
             );
+            // Section doesn't have subheadings
           } else {
             anchorLink = createAnchor(heading);
             return (
@@ -81,7 +102,7 @@ export default function ProjectNav({
               >
                 <li
                   className={
-                    anchorLink === selected
+                    anchorLink === activeSection
                       ? "selected-anchor"
                       : null
                   }

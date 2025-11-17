@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
-export default function Menu({ items }) {
+export default function HeaderNav({ items }) {
   const [isOpen, setIsOpen] = useState(true);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(
+    window.innerWidth
+  );
   const BREAKPOINT = 600;
 
   useEffect(() => {
@@ -15,9 +17,15 @@ export default function Menu({ items }) {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
     };
   }, [screenWidth]);
 
@@ -28,8 +36,12 @@ export default function Menu({ items }) {
   return (
     <nav>
       <button
-        className={isOpen ? "nav-icon x-mark" : "nav-icon"}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
+        className={
+          isOpen ? "nav-icon x-mark" : "nav-icon"
+        }
+        aria-label={
+          isOpen ? "Close menu" : "Open menu"
+        }
         onClick={handleClick}
       >
         <div></div>

@@ -9,13 +9,16 @@ import Accordion from "../components/Accordion";
 import Callout from "../components/Callout";
 import ImageCaption from "../components/Image-Caption";
 import ButtonBar from "../components/Button-Bar";
+import { useRef } from "react";
 
 export default function HaikuHunt() {
   const project = projects.haikuHunt;
+  const articleRef = useRef(null);
+
   return (
     <>
       <PageTemplate className="haiku-hunt project-page">
-        <article>
+        <article ref={articleRef}>
           <ProjectHeader
             title={project.title}
             date={project.date}
@@ -27,7 +30,7 @@ export default function HaikuHunt() {
             images={project.images_featured}
           ></Carousel>
           <TwoCol
-            id="haiku-background"
+            id="background"
             ratio={[3, 2]}
             col1={
               <>
@@ -67,7 +70,7 @@ export default function HaikuHunt() {
             }
           />
           <hr />
-          <OneCol id="haiku-task">
+          <OneCol id="task">
             <h2>The (Original) Task</h2>
             <p>
               During this leg of my web
@@ -122,7 +125,7 @@ export default function HaikuHunt() {
             </Accordion>
           </OneCol>
           <hr />
-          <OneCol id="haiku-take">
+          <OneCol id="take">
             <h2>My Take</h2>
             <p>
               I decided to merge the above
@@ -137,7 +140,7 @@ export default function HaikuHunt() {
             </p>
           </OneCol>
           <hr />
-          <OneCol id="haiku-data">
+          <OneCol id="data">
             <h2>Data</h2>
             <p>
               I chose the{" "}
@@ -153,35 +156,33 @@ export default function HaikuHunt() {
             </p>
             <table>
               <caption>About the dataset</caption>
-              <div>
-                <thead>
-                  <tr>
-                    <th>Rows</th>
-                    <th>Columns</th>
-                    <th>Each row is a</th>
-                    <th>Sample fields</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>3,762</td>
-                    <td>34</td>
-                    <td>
-                      monument maintained by NYC
-                      Parks
-                    </td>
-                    <td>
-                      <ul>
-                        <li>name</li>
-                        <li>parkname</li>
-                        <li>location</li>
-                        <li>architect</li>
-                        <li>dedicated</li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </div>
+              <thead>
+                <tr>
+                  <th>Rows</th>
+                  <th>Columns</th>
+                  <th>Each row is a</th>
+                  <th>Sample fields</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3,762</td>
+                  <td>34</td>
+                  <td>
+                    monument maintained by NYC
+                    Parks
+                  </td>
+                  <td>
+                    <ul>
+                      <li>name</li>
+                      <li>parkname</li>
+                      <li>location</li>
+                      <li>architect</li>
+                      <li>dedicated</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
             </table>
             <p>
               Each landmark would need an initial
@@ -212,7 +213,7 @@ export default function HaikuHunt() {
                 ."
               </p>
             </aside>
-            <h3>Designing the schema</h3>
+            <h3 id="schema">Schema</h3>
             <p>
               To start, I planned two tables for
               my database: Landmarks and Clues.
@@ -234,7 +235,7 @@ export default function HaikuHunt() {
               app would require a different
               approach.
             </p>
-            <h3>Extracting the data</h3>
+            <h3 id="acquisition">Acquisition</h3>
             <p>
               To populate my tables, I queried the
               NPM dataset via the{" "}
@@ -258,7 +259,9 @@ export default function HaikuHunt() {
                 pagination metadata
               </li>
             </ul>
-            <h3>Transforming the data</h3>
+            <h3 id="transformation">
+              Transformation
+            </h3>
             <p>
               Next, I performed an exploratory
               analysis on the data and handled
@@ -285,7 +288,7 @@ export default function HaikuHunt() {
             </ul>
           </OneCol>
           <hr />
-          <OneCol id="haiku-design">
+          <OneCol id="design">
             <h2>Design</h2>
             <p>
               I kept the design relatively simple.
@@ -330,9 +333,9 @@ export default function HaikuHunt() {
             />
           </OneCol>
           <hr />
-          <OneCol id="haiku-development">
+          <OneCol id="development">
             <h2>Development</h2>
-            <h3 id="haiku-approach">Approach</h3>
+            <h3 id="approach">Approach</h3>
             <p>
               I developed the app in rough
               increments, meaning that for each
@@ -363,9 +366,7 @@ export default function HaikuHunt() {
               added the user login and user
               dashboard.
             </p>
-            <h3 id="haiku-challenges">
-              Challenges
-            </h3>
+            <h3 id="challenges">Challenges</h3>
             <p>
               My biggest challenge was{" "}
               <span className="highlight">
@@ -388,7 +389,7 @@ export default function HaikuHunt() {
               <code>express-validator</code> to
               validate clue submissions.
             </p>
-            <h3 id="haiku-objectives">
+            <h3 id="objectives">
               Future objectives
             </h3>
             <p>
@@ -458,7 +459,7 @@ export default function HaikuHunt() {
             </ButtonBar>
           </OneCol>
           <hr />
-          <OneCol id="haiku-thoughts">
+          <OneCol id="thoughts">
             <h2>Final Thoughts</h2>
             <p>
               A few months ago, I was writing{" "}
@@ -493,7 +494,14 @@ export default function HaikuHunt() {
             "Background",
             "The (Original) Task",
             "My Take",
-            "Data",
+            [
+              "Data",
+              [
+                "Schema",
+                "Acquisition",
+                "Transformation",
+              ],
+            ],
             "Design",
             [
               "Development",
@@ -505,6 +513,7 @@ export default function HaikuHunt() {
             ],
             "Final Thoughts",
           ]}
+          articleRef={articleRef}
         />
       </PageTemplate>
     </>

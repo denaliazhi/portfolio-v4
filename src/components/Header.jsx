@@ -1,4 +1,4 @@
-import Menu from "./Menu";
+import HeaderNav from "./Header-Nav";
 
 export default function Header() {
   return (
@@ -10,7 +10,7 @@ export default function Header() {
         <p>enalia</p>
         <p>hi</p>
       </div>
-      <Menu items={["Projects", "About"]} />
+      <HeaderNav items={["Projects", "About"]} />
     </header>
   );
 }

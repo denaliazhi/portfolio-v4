@@ -669,9 +669,12 @@ footer p:hover {
   opacity: 0.7;
   position: sticky;
   top: 30%;
-  height: 100vh;
+  max-height: 70vh;
   margin-right: -10rem;
+  overflow: auto;
+
   transform: scale(0.8);
+
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -704,9 +707,9 @@ footer p:hover {
   cursor: pointer;
 }
 
-.project-nav .selected-anchor {
+/* .project-nav .selected-anchor {
   background-color: rgba(var(--brown), 0.1);
-}
+} */
 
 .project-page article {
   max-width: 42rem;
@@ -1039,28 +1042,28 @@ footer p:hover {
 }
 
 /* --------------- Project Page: Grocery App --------------- */
-#grocery-take h3 {
+.grocery-app #take h3 {
   margin-top: 1rem;
   font-family: var(--sans-serif);
   font-weight: bold;
   font-size: medium;
 }
 
-#grocery-design > img:first-of-type {
+.grocery-app #design > img:first-of-type {
   border: 2px solid var(--lighter-main);
   border-radius: var(--rounded);
 }
 
-#grocery-design > img {
+.grocery-app #design > img {
   margin: 1rem 0;
 }
 
-#grocery-design .accordion-body > .two-col {
+.grocery-app #design .accordion-body > .two-col {
   gap: 1.5rem;
   margin: 1rem 0;
 }
 
-#grocery-development .button-bar p::before {
+.grocery-app #development .button-bar p::before {
   background-image: url("/icons/search.png");
 }
 
@@ -1070,40 +1073,40 @@ footer p:hover {
   margin: 0;
 }
 
-#haiku-data table {
+.haiku-hunt #data table {
   border: 1px solid var(--lighter-main);
 }
-#haiku-data caption {
+.haiku-hunt #data caption {
   padding: 0.3rem;
   background-color: rgba(var(--brown), 0.1);
 }
-#haiku-data table {
+.haiku-hunt #data table {
   border-collapse: collapse;
   font-size: small;
   text-align: left;
 }
-#haiku-data th,
-#haiku-data td {
+.haiku-hunt #data th,
+.haiku-hunt #data td {
   border-left: 1px solid var(--lighter-main);
 }
-#haiku-data th {
+.haiku-hunt #data th {
   padding: 0.5rem 0.8rem 0;
 }
-#haiku-data td {
+.haiku-hunt #data td {
   vertical-align: top;
   padding: 0.5rem 0.8rem;
 }
 
-#haiku-data h3,
-#haiku-development h3 {
+.haiku-hunt #data h3,
+.haiku-hunt #development h3 {
   margin-top: 1rem;
 }
 
-#haiku-data img {
+.haiku-hunt #data img {
   margin: 1rem 0;
 }
 
-#haiku-design > p:last-of-type {
+.haiku-hunt #design > p:last-of-type {
   margin-top: 1rem;
 }
 
@@ -1332,16 +1335,23 @@ footer p:hover {
   }
 
   /* ------------ Project Page: Haiku Hunt ------------- */
-  #haiku-data table > div,
-  #haiku-data tr {
+  .haiku-hunt #data table,
+  .haiku-hunt #data tr {
     display: flex;
+    flex-wrap: wrap;
+  }
+  .haiku-hunt #data caption {
+    width: 100%;
+  }
+  .haiku-hunt #data tbody {
+    flex: 1;
   }
 
-  #haiku-data tr {
+  .haiku-hunt #data tr {
     flex-direction: column;
   }
-  #haiku-data th,
-  #haiku-data td {
+  .haiku-hunt #data th,
+  .haiku-hunt #data td {
     padding: 0.5rem 0.7rem;
   }
 }
