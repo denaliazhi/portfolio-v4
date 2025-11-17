@@ -5,6 +5,7 @@ import Carousel from "../components/Carousel";
 import TwoCol from "../components/Two-Col";
 import OneCol from "../components/One-Col";
 import Accordion from "../components/Accordion";
+import Callout from "../components/Callout";
 import ImageCaption from "../components/Image-Caption";
 import ButtonBar from "../components/Button-Bar";
 
@@ -462,9 +463,20 @@ export default function HaikuHunt() {
               more than ever how much I have yet
               to learn. The future is at once
               promising, uncertain, daunting, and
-              exciting. Mostly exciting. 🙂
+              exciting. Most of all, exciting. 🙂
             </p>
           </OneCol>
+          <a href="/ESL-Grocery-Shop">
+            <Callout
+              icon="/projects/grocery-cover.png"
+              content={{
+                heading: "Care for another?",
+                body: [
+                  projects.groceryShop.desc_short,
+                ],
+              }}
+            ></Callout>
+          </a>
         </article>
       </PageTemplate>
     </>

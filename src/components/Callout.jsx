@@ -7,7 +7,7 @@ export default function Callout({
       <div
         className="icon"
         style={{
-          backgroundImage: `url('/icons/${icon}.png')`,
+          backgroundImage: `url('${icon}')`,
         }}
       ></div>
       {content && (

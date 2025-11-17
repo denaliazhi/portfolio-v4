@@ -654,7 +654,7 @@ footer p:hover {
 
 /* --------------- Home Page: Callout --------------- */
 .home .callout {
-  max-width: 64rem;
+  padding: 1rem 0;
 }
 
 /* --------------- Project Page --------------- */
@@ -706,6 +706,40 @@ footer p:hover {
 
 .project-page p > a:hover {
   text-decoration-color: var(--main);
+}
+
+.project-page .callout:last-of-type {
+  gap: 1.2rem;
+  padding: 0.8rem 1rem;
+  width: fit-content;
+  border: 2px solid rgba(var(--brown), 0.25);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.project-page
+  .callout:last-of-type
+  .callout-content {
+  padding: 0.3rem 0;
+  gap: 0.3rem;
+  flex: none;
+}
+
+.project-page .callout:last-of-type h3 {
+  font-size: x-small;
+  font-weight: 400;
+}
+.project-page .callout:last-of-type p {
+  width: fit-content;
+  font-weight: bold;
+  font-size: small;
+}
+.project-page .callout:last-of-type .icon {
+  margin: 0;
+  width: 5.5rem;
+  border-radius: 0.4rem;
+  background-size: cover;
+  flex: none;
 }
 
 /* --------------- Button Bar --------------- */
@@ -831,7 +865,7 @@ footer p:hover {
 /* --------------- Accordion --------------- */
 .accordion {
   padding: 1rem 2rem;
-  border: 2px solid var(--main);
+  border: 2px solid rgba(var(--brown), 0.25);
   border-radius: var(--rounded);
 }
 
@@ -1164,6 +1198,15 @@ footer p:hover {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .project-page
+    .callout:last-of-type
+    .callout-content {
+    flex: 2;
+  }
+  .project-page .callout:last-of-type .icon {
+    flex: 1;
   }
 
   /* -------- Callout --------- */

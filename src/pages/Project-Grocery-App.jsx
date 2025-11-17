@@ -25,7 +25,7 @@ export default function GroceryApp() {
           images={project.images_featured}
         ></Carousel>
         <Callout
-          icon="lightbulb"
+          icon="/icons/lightbulb.png"
           content={{
             heading:
               "In a country where you don't know the language, how do you shop for groceries?",
@@ -54,10 +54,10 @@ export default function GroceryApp() {
                 frustration as they tried to learn
                 a new language.{" "}
                 <span className="highlight">
-                  Crucial to their investment in
-                  the process was the connection
-                  of our lessons to their everyday
-                  lives.
+                  A crucial part of keeping them
+                  invested in the process was
+                  connecting our lessons to their
+                  everyday lives.
                 </span>
               </p>
               <p>
@@ -378,6 +378,17 @@ export default function GroceryApp() {
             like this one.
           </p>
         </OneCol>
+        <a href="/Haiku-Hunt">
+          <Callout
+            icon="/projects/haiku-cover.png"
+            content={{
+              heading: "Care for another?",
+              body: [
+                projects.haikuHunt.desc_short,
+              ],
+            }}
+          ></Callout>
+        </a>
       </article>
     </PageTemplate>
   );
