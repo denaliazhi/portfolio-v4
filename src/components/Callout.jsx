@@ -3,7 +3,7 @@ export default function Callout({
   content,
 }) {
   return (
-    <section class="callout">
+    <section className="callout">
       <div
         className="icon"
         style={{
@@ -17,7 +17,8 @@ export default function Callout({
           )}
           {content.body &&
             content.body.map((paragraph) => (
-              <p>{paragraph}</p>
+              // TO DO: change key
+              <p key={paragraph}>{paragraph}</p>
             ))}
         </div>
       )}

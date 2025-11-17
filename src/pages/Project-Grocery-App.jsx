@@ -1,6 +1,7 @@
 import { projects } from "../data/projects-data";
 import PageTemplate from "../components/Page-Template";
 import ProjectHeader from "../components/Project-Header";
+import ProjectNav from "../components/Project-Nav";
 import Carousel from "../components/Carousel";
 import Callout from "../components/Callout";
 import TwoCol from "../components/Two-Col";
@@ -17,6 +18,7 @@ export default function GroceryApp() {
       <article>
         <ProjectHeader
           title={project.title}
+          date={project.date}
           desc={project.desc_long}
           type={project.type}
           tools={project.tools}
@@ -35,6 +37,7 @@ export default function GroceryApp() {
           }}
         />
         <TwoCol
+          id="grocery-background"
           ratio={[3, 2]}
           col1={
             <>
@@ -81,7 +84,7 @@ export default function GroceryApp() {
           }
         />
         <hr />
-        <OneCol>
+        <OneCol id="grocery-task">
           <h2>The (Original) Task</h2>
           <p>
             Some months into learning web
@@ -111,8 +114,8 @@ export default function GroceryApp() {
           </ol>
         </OneCol>
         <hr />
-        <OneCol id="grocery-twist">
-          <h2>My Twist</h2>
+        <OneCol id="grocery-take">
+          <h2>My Take</h2>
           <p>
             Inspired by my teaching experience, I
             decided to turn the shopping cart into
@@ -314,7 +317,7 @@ export default function GroceryApp() {
           </Accordion>
         </OneCol>
         <hr />
-        <OneCol id="grocery-dev">
+        <OneCol id="grocery-development">
           <h2>Development</h2>
           <p>
             This was my first time developing a
@@ -360,7 +363,7 @@ export default function GroceryApp() {
           </ButtonBar>
         </OneCol>
         <hr />
-        <OneCol>
+        <OneCol id="grocery-thoughts">
           <h2>Final Thoughts</h2>
           <p>
             When I first planned this app, my
@@ -390,6 +393,17 @@ export default function GroceryApp() {
           ></Callout>
         </a>
       </article>
+      <ProjectNav
+        anchorBase="grocery"
+        sections={[
+          "Background",
+          "The (Original) Task",
+          "My Take",
+          "Design",
+          "Development",
+          "Final Thoughts",
+        ]}
+      />
     </PageTemplate>
   );
 }

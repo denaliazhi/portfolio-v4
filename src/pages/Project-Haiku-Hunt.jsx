@@ -17,6 +17,7 @@ export default function HaikuHunt() {
         <article>
           <ProjectHeader
             title={project.title}
+            date={project.date}
             desc={project.desc_long}
             type={project.type}
             tools={project.tools}

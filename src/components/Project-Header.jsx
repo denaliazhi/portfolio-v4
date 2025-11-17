@@ -1,19 +1,27 @@
 export default function ProjectHeader({
   title,
+  date = false,
   desc,
   type,
   tools,
 }) {
   return (
-    <section>
-      <h1>{title}</h1>
+    <section className="project-header">
+      <div>
+        <h1>{title}</h1>
+        {date && <p>{date}</p>}
+      </div>
       <hr />
-      <ul class="tags">
+      <ul className="tags">
         {tools.map((tool) => (
-          <li>{tool}</li>
+          <li key={`${title} - ${tool}`}>
+            {tool}
+          </li>
         ))}
         {type.map((item) => (
-          <li>{item}</li>
+          <li key={`${title} - ${item}`}>
+            {item}
+          </li>
         ))}
       </ul>
       <p>{desc}</p>

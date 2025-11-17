@@ -1,6 +1,7 @@
 const projects = {
   groceryShop: {
     title: "ESL Grocery Shop",
+    date: "Sep 2025",
     desc_short:
       "A narrative app for ESL students",
     desc_long: `I built a narrative app to help English as a Second Language (ESL) 
@@ -28,6 +29,7 @@ const projects = {
   },
   haikuHunt: {
     title: "Haiku Hunt",
+    date: "Oct 2025",
     desc_short: "A poetic scavenger hunt",
     desc_long:
       "I built a platform where users guess landmarks based on haiku clues and then write poems of their own.",
@@ -46,6 +48,7 @@ const projects = {
   },
   orbitl: {
     title: "Orbitl",
+    date: "Nov 2025",
     desc_short:
       "A science startup's landing page",
     images_featured: [

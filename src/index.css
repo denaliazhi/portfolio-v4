@@ -661,10 +661,44 @@ footer p:hover {
 
 .project-page {
   margin-top: 1rem;
-  max-width: 42rem;
+  flex-direction: row;
+}
+
+.project-nav {
+  position: sticky;
+  top: 43%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-nav h2 {
+  font-family: var(--sans-serif);
+  font-size: medium;
+  font-weight: bold;
+}
+
+.project-nav ul {
+  list-style: none;
+}
+
+.project-nav li {
+  padding: 0.2rem;
+}
+
+.project-nav li:hover {
+  background-color: rgba(var(--brown), 0.1);
+  cursor: pointer;
+}
+
+.project-nav .selected-anchor {
+  background-color: rgba(var(--brown), 0.1);
 }
 
 .project-page article {
+  max-width: 42rem;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -693,10 +727,6 @@ footer p:hover {
   margin: 1rem 0 1.5rem;
 }
 
-.project-page .tags {
-  margin: 1rem 0;
-}
-
 .project-page p > a {
   text-decoration-line: underline;
   text-decoration-thickness: 3px;
@@ -708,13 +738,31 @@ footer p:hover {
   text-decoration-color: var(--main);
 }
 
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-header > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-header > div:first-of-type p {
+  padding-top: 0.5rem;
+}
+
 .project-page .callout:last-of-type {
-  gap: 1.2rem;
   padding: 0.8rem 1rem;
   width: fit-content;
   border: 2px solid rgba(var(--brown), 0.25);
+
   align-items: center;
   flex-wrap: wrap;
+  gap: 1.2rem;
+
+  transition: border 200ms ease-in-out;
 }
 
 .project-page
@@ -740,6 +788,10 @@ footer p:hover {
   border-radius: 0.4rem;
   background-size: cover;
   flex: none;
+}
+
+.project-page .callout:last-of-type:hover {
+  border: 2px solid var(--main);
 }
 
 /* --------------- Button Bar --------------- */
@@ -782,10 +834,11 @@ footer p:hover {
   border-radius: var(--rounded);
   background-color: transparent;
   cursor: pointer;
+  transition: border-style 200ms ease-in-out;
 }
 
 .button-bar a:hover {
-  border: 2px solid var(--main);
+  border-style: solid;
 }
 
 /* --------------- Carousel --------------- */
@@ -969,7 +1022,7 @@ footer p:hover {
 }
 
 /* --------------- Project Page: Grocery App --------------- */
-#grocery-twist h3 {
+#grocery-take h3 {
   margin-top: 1rem;
   font-family: var(--sans-serif);
   font-weight: bold;
@@ -990,14 +1043,13 @@ footer p:hover {
   margin: 1rem 0;
 }
 
-#grocery-dev .button-bar p::before {
+#grocery-development .button-bar p::before {
   background-image: url("/icons/search.png");
 }
 
 /* --------------- Project Page: Haiku Hunt --------------- */
 
-.haiku-hunt .accordion li,
-.haiku-hunt .accordion .tags {
+.haiku-hunt .accordion li {
   margin: 0;
 }
 
@@ -1040,6 +1092,11 @@ footer p:hover {
 
 /* --------------- MEDIUM SIZE DEVICE --------------- */
 
+@media (max-width: 1000px) {
+  .project-nav {
+    display: none;
+  }
+}
 @media (max-width: 600px) {
   /* -------- GENERAL -------- */
   #root {
@@ -1109,15 +1166,17 @@ footer p:hover {
   }
 
   .nav-items {
-    position: fixed;
-    right: 1rem;
     font-size: 1.2rem;
+    width: 100%;
+    position: fixed;
+    right: 0;
     padding: 2rem;
     margin-top: 1rem;
 
     background-color: var(--background);
+    border-bottom-left-radius: var(--rounded);
+    border-bottom-right-radius: var(--rounded);
     box-shadow: var(--shadow);
-    border-radius: var(--rounded);
 
     flex-direction: column;
     gap: 1rem;
@@ -1186,8 +1245,21 @@ footer p:hover {
   }
 
   /* -------- Project Page --------- */
+  .project-nav {
+    display: none;
+  }
+
+  .project-header > div:first-of-type {
+    text-align: center;
+    flex-direction: column;
+  }
+
   .project-page {
     margin-top: 15%;
+  }
+
+  .project-page article {
+    max-width: 100%;
   }
 
   .project-page h1 {
