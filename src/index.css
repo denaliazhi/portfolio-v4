@@ -662,15 +662,22 @@ footer p:hover {
 .project-page {
   margin-top: 1rem;
   flex-direction: row;
+  gap: 1.5rem;
 }
 
 .project-nav {
+  opacity: 0.7;
   position: sticky;
-  top: 43%;
+  top: 30%;
   height: 100vh;
+  margin-right: -10rem;
+  transform: scale(0.8);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+.project-nav:hover {
+  opacity: 1;
 }
 
 .project-nav h2 {
@@ -685,6 +692,11 @@ footer p:hover {
 
 .project-nav li {
   padding: 0.2rem;
+}
+
+.project-nav li li {
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--lighter-main);
 }
 
 .project-nav li:hover {
@@ -702,6 +714,11 @@ footer p:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.project-page article h3,
+.project-page article section {
+  scroll-margin: 3rem;
 }
 
 .project-page img {
@@ -1078,7 +1095,7 @@ footer p:hover {
 }
 
 #haiku-data h3,
-#haiku-dev h3 {
+#haiku-development h3 {
   margin-top: 1rem;
 }
 

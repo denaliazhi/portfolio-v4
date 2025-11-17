@@ -1,5 +1,6 @@
 import { projects } from "../data/projects-data";
 import PageTemplate from "../components/Page-Template";
+import ProjectNav from "../components/Project-Nav";
 import ProjectHeader from "../components/Project-Header";
 import Carousel from "../components/Carousel";
 import TwoCol from "../components/Two-Col";
@@ -26,6 +27,7 @@ export default function HaikuHunt() {
             images={project.images_featured}
           ></Carousel>
           <TwoCol
+            id="haiku-background"
             ratio={[3, 2]}
             col1={
               <>
@@ -120,8 +122,8 @@ export default function HaikuHunt() {
             </Accordion>
           </OneCol>
           <hr />
-          <OneCol>
-            <h2>My Twist</h2>
+          <OneCol id="haiku-take">
+            <h2>My Take</h2>
             <p>
               I decided to merge the above
               assignments into a more polished
@@ -190,7 +192,9 @@ export default function HaikuHunt() {
               "fountains."
             </p>
             <aside>
-              <p class="bold">Why fountains?</p>
+              <p className="bold">
+                Why fountains?
+              </p>
               <p>
                 My reasons for this criteria are
                 personal and practical. First, I
@@ -326,9 +330,9 @@ export default function HaikuHunt() {
             />
           </OneCol>
           <hr />
-          <OneCol id="haiku-dev">
+          <OneCol id="haiku-development">
             <h2>Development</h2>
-            <h3>Approach</h3>
+            <h3 id="haiku-approach">Approach</h3>
             <p>
               I developed the app in rough
               increments, meaning that for each
@@ -359,7 +363,9 @@ export default function HaikuHunt() {
               added the user login and user
               dashboard.
             </p>
-            <h3>Challenges</h3>
+            <h3 id="haiku-challenges">
+              Challenges
+            </h3>
             <p>
               My biggest challenge was{" "}
               <span className="highlight">
@@ -382,7 +388,9 @@ export default function HaikuHunt() {
               <code>express-validator</code> to
               validate clue submissions.
             </p>
-            <h3>Future objectives</h3>
+            <h3 id="haiku-objectives">
+              Future objectives
+            </h3>
             <p>
               During development, I seemed to
               generate an ever-growing list of
@@ -450,7 +458,7 @@ export default function HaikuHunt() {
             </ButtonBar>
           </OneCol>
           <hr />
-          <OneCol>
+          <OneCol id="haiku-thoughts">
             <h2>Final Thoughts</h2>
             <p>
               A few months ago, I was writing{" "}
@@ -479,6 +487,25 @@ export default function HaikuHunt() {
             ></Callout>
           </a>
         </article>
+        <ProjectNav
+          anchorBase="haiku"
+          sections={[
+            "Background",
+            "The (Original) Task",
+            "My Take",
+            "Data",
+            "Design",
+            [
+              "Development",
+              [
+                "Approach",
+                "Challenges",
+                "Future Objectives",
+              ],
+            ],
+            "Final Thoughts",
+          ]}
+        />
       </PageTemplate>
     </>
   );

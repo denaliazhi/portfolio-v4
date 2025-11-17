@@ -5,7 +5,6 @@ export default function ProjectNav({
   sections,
 }) {
   const [selected, setSelected] = useState();
-
   console.log(selected);
   function handleClick(e) {
     const identifier = e.target.id.replace(
@@ -31,17 +30,17 @@ export default function ProjectNav({
             anchorLink = createAnchor(heading[0]);
             return (
               <li
+                key={anchorLink}
                 className={
                   anchorLink === selected
                     ? "selected-anchor"
                     : null
                 }
-                id={`${anchorLink}-anchor`}
-                onClick={handleClick}
               >
                 <a
-                  key={anchorLink}
                   href={`#${anchorLink}`}
+                  id={`${anchorLink}-anchor`}
+                  onClick={handleClick}
                 >
                   {heading[0]}
                 </a>
@@ -52,18 +51,17 @@ export default function ProjectNav({
                         createAnchor(subheading);
                       return (
                         <a
+                          key={subLink}
                           href={`#${subLink}`}
                           onClick={handleClick}
                         >
                           <li
                             className={
-                              anchorLink ===
-                              selected
+                              subLink === selected
                                 ? "selected-anchor"
                                 : null
                             }
                             id={`${subLink}-anchor`}
-                            key={subLink}
                           >
                             {subheading}
                           </li>
@@ -76,7 +74,6 @@ export default function ProjectNav({
             );
           } else {
             anchorLink = createAnchor(heading);
-            console.log(anchorLink);
             return (
               <a
                 key={anchorLink}
