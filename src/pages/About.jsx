@@ -1,4 +1,3 @@
-import PageTemplate from "../components/Page-Template";
 import { useState } from "react";
 
 export default function About() {
@@ -18,7 +17,7 @@ export default function About() {
   };
 
   return (
-    <PageTemplate className="about">
+    <main className="about">
       <img src="/about/title.svg" alt="" />
       <section id="artifacts">
         <figure id="cake" onClick={handleClick}>
@@ -78,12 +77,11 @@ export default function About() {
                 How do you get a cow off the
                 trail?
               </b>{" "}
-              <br />
               Ask it to moo-ve.
               <br />
               <br />
-              When I'm not online, I'm probably on
-              a trail. In August, I went on a
+              When I'm not online, I'm likely
+              outdoors. In August, I went on a
               4-day hike along the Alta Via 1.
             </pre>
           )}
@@ -96,9 +94,9 @@ export default function About() {
               There's a 100% chance you end up
               with something in common!
               <br />
-              <br />I shared this <i>cool</i>{" "}
-              experience (pun-intended) with
-              hostel-mates in Iceland.
+              <br />I shared this cool experience
+              (pun-intended) with hostel-mates in
+              Iceland.
             </pre>
           )}
           {speech === "cat" && (
@@ -135,6 +133,6 @@ export default function About() {
           <figcaption>Meow?</figcaption>
         </figure>
       </section>
-    </PageTemplate>
+    </main>
   );
 }

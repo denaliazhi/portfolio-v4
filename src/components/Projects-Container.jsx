@@ -10,6 +10,7 @@ export default function ProjectsContainer({
       <div>
         {Object.values(content).map((project) => (
           <a
+            key={project.title}
             href={`/${project.title.replaceAll(
               " ",
               "-"

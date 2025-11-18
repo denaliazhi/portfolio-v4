@@ -51,9 +51,9 @@ export default function HeaderNav({ items }) {
       {isOpen && (
         <li className="nav-items">
           {items.map((item) => (
-            <ul key={item}>
+            <ul key={item} className="tags">
               <a href={`/${item.toLowerCase()}`}>
-                <p>{item}</p>
+                <li>{item}</li>
               </a>
             </ul>
           ))}

@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
     <footer>
-      <p>This site was made by a squirrel 🐿️</p>
+      <a href="/Secret">
+        <p>This site was made by a squirrel 🐿️</p>
+      </a>
       <div className="socials">
         <a
           href="https://www.linkedin.com/in/denaliazhi/"

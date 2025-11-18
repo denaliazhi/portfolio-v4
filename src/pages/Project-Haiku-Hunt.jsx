@@ -1,5 +1,4 @@
 import { projects } from "../data/projects-data";
-import PageTemplate from "../components/Page-Template";
 import ProjectNav from "../components/Project-Nav";
 import ProjectHeader from "../components/Project-Header";
 import Carousel from "../components/Carousel";
@@ -17,7 +16,7 @@ export default function HaikuHunt() {
 
   return (
     <>
-      <PageTemplate className="haiku-hunt project-page">
+      <main className="haiku-hunt project-page">
         <article ref={articleRef}>
           <ProjectHeader
             title={project.title}
@@ -515,7 +514,7 @@ export default function HaikuHunt() {
           ]}
           articleRef={articleRef}
         />
-      </PageTemplate>
+      </main>
     </>
   );
 }

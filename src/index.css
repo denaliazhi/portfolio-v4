@@ -261,8 +261,12 @@ footer {
   align-items: center;
 }
 
-footer p:hover {
-  color: var(--main);
+footer > a > p {
+  opacity: 0.5;
+}
+
+footer > a > p:hover {
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -813,7 +817,7 @@ footer p:hover {
 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .project-page article h3,
@@ -1207,7 +1211,52 @@ footer p:hover {
   margin-top: 1rem;
 }
 
-/* --------------- MEDIUM SIZE DEVICE --------------- */
+/* ------------ Not Found Page ------------- */
+
+.not-found {
+  text-align: center;
+  margin: auto;
+}
+
+.not-found h1 {
+  font-size: large;
+}
+
+.not-found pre {
+  text-align: left;
+  white-space: pre-wrap;
+  width: 40ch;
+  padding: 1rem;
+}
+
+.not-found div {
+  margin-top: 6rem;
+  position: relative;
+}
+
+.not-found .speech-bubble {
+  position: absolute;
+  bottom: 90%;
+  right: -40%;
+}
+
+.not-found img {
+  animation: squirrel 2s linear infinite;
+}
+
+@keyframes squirrel {
+  20% {
+    transform: rotate(2deg);
+  }
+  45% {
+    transform: rotate(-3deg);
+  }
+  65% {
+    transform: rotate(1deg);
+  }
+}
+
+/* ------------------------------------------ OTHER DEVICES -------------------------------------------------- */
 
 @media (max-width: 1000px) {
   .project-nav {
@@ -1304,6 +1353,7 @@ footer p:hover {
     transform: scale(75%);
     max-width: 100%;
     height: auto;
+    gap: 2rem;
   }
 
   .greeting {
@@ -1362,6 +1412,11 @@ footer p:hover {
   }
 
   /* -------- About Page --------- */
+
+  .about {
+    gap: 1rem;
+  }
+
   .about > img:first-of-type {
     margin-top: 5rem;
   }
@@ -1394,6 +1449,7 @@ footer p:hover {
   }
 
   #headshot {
+    height: 168px;
     width: 100%;
     order: 1;
   }
@@ -1506,6 +1562,45 @@ footer p:hover {
   .haiku-hunt #data th,
   .haiku-hunt #data td {
     padding: 0.5rem 0.7rem;
+  }
+  /* -------- Not Found -------- */
+  .not-found {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .not-found div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .not-found img {
+    order: 2;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 60vw;
+    height: auto;
+  }
+
+  .not-found .speech-bubble {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -0.5rem;
+  }
+  .not-found .speech-bubble::before,
+  .not-found .speech-bubble::after {
+    z-index: 5;
+    left: 10rem;
+    bottom: -1rem;
+  }
+  .not-found .speech-bubble::after {
+    height: 0.88rem;
+    border-right: 2px solid
+      rgba(var(--brown), 0.1);
+    border-top: 2px solid rgba(var(--brown), 0.1);
   }
 }
 

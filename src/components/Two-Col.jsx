@@ -9,8 +9,12 @@ export default function TwoCol({
       className="two-col"
       id={id ? id : null}
     >
-      <div style={{ flex: ratio[0] }}>{col1}</div>
-      <div style={{ flex: ratio[1] }}>{col2}</div>
+      <div style={{ flex: ratio[0] }}>
+        {col1 ? col1 : null}
+      </div>
+      <div style={{ flex: ratio[1] }}>
+        {col2 ? col2 : null}
+      </div>
     </section>
   );
 }

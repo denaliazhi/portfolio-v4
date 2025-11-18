@@ -1,5 +1,4 @@
 import { projects } from "../data/projects-data";
-import PageTemplate from "../components/Page-Template";
 import ProjectHeader from "../components/Project-Header";
 import ProjectNav from "../components/Project-Nav";
 import Carousel from "../components/Carousel";
@@ -16,7 +15,7 @@ export default function GroceryApp() {
   const articleRef = useRef(null);
 
   return (
-    <PageTemplate className="grocery-app project-page">
+    <main className="grocery-app project-page">
       <article ref={articleRef}>
         <ProjectHeader
           title={project.title}
@@ -407,6 +406,6 @@ export default function GroceryApp() {
         ]}
         articleRef={articleRef}
       />
-    </PageTemplate>
+    </main>
   );
 }
