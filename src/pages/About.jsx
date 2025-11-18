@@ -57,12 +57,17 @@ export default function About() {
           )}
           {speech === "cake" && (
             <pre className="speech-bubble">
-              <b>Is it cake...?</b> Yes! I baked a
-              chiffon roll cake shaped like frogs
-              on a log.
+              <a href="https://share.google/e8iDkdX2rgz8q1EK6">
+                <b>Is it cake?</b>
+              </a>{" "}
+              Yes! I baked a chiffon roll cake
+              shaped like frogs on a log.
               <br />
-              <br />I love getting creative in the
-              kitchen. They say baking is a
+              <br />I love getting{" "}
+              <a href="https://www.instagram.com/bydenalia/?hl=en">
+                creative
+              </a>{" "}
+              in the kitchen. They say baking is a
               science. I say, 'A science{" "}
               <em>experiment</em>.'
             </pre>
@@ -78,8 +83,8 @@ export default function About() {
               <br />
               <br />
               When I'm not online, I'm probably on
-              a trail. In August, I hiked for 4
-              days along the Alta Via 1.
+              a trail. In August, I went on a
+              4-day hike along the Alta Via 1.
             </pre>
           )}
           {speech === "snorkeling" && (
@@ -92,8 +97,8 @@ export default function About() {
               with something in common!
               <br />
               <br />I shared this <i>cool</i>{" "}
-              experience with my hostel-mates in
-              Iceland.
+              experience (pun-intended) with
+              hostel-mates in Iceland.
             </pre>
           )}
           {speech === "cat" && (

@@ -611,6 +611,15 @@ footer p:hover {
   font-weight: bolder;
 }
 
+.about .speech-bubble a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(var(--brown), 0.25);
+}
+.about .speech-bubble a:hover {
+  text-decoration-color: var(--main);
+}
+
 .about > img:first-of-type {
   max-width: 300px;
   margin: 0 auto;
