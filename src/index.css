@@ -278,20 +278,15 @@ hr {
   }
 }
 @keyframes slide-down {
-  10% {
-    offset-distance: 7%;
-    left: 1.5rem;
-    top: -1.5rem;
+  15% {
+    offset-distance: 2%;
   }
-  25% {
-    offset-distance: 78%;
-    left: 0rem;
-    top: -3.7rem;
+  35% {
+    offset-distance: 83.5%;
   }
   55% {
-    offset-distance: 79%;
+    offset-distance: 84.5%;
     opacity: 1;
-    top: -3.7rem;
   }
   60% {
     offset-distance: 100%;
@@ -334,7 +329,7 @@ header {
 .logo.icon {
   width: 1.7rem;
   height: 1.7rem;
-  background-image: url("/personal-logo.png");
+  background-image: url("/dz-logo.svg");
 
   transition: filter var(--logo-transition);
 }
@@ -387,7 +382,7 @@ header {
 }
 
 .nav-items li:hover {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  outline: 2px dashed var(--main);
 }
 
 header,
@@ -439,6 +434,7 @@ footer > a > p:hover {
 }
 
 .hero-text {
+  z-index: 1;
   margin-top: 6rem; /* Aligns text with horizon */
   max-width: 27rem;
   display: flex;
@@ -488,6 +484,14 @@ footer > a > p:hover {
 
   animation: jump 3s ease-out infinite;
 }
+.greeting.sliding {
+  top: -0.1rem;
+  left: 3rem;
+  offset-path: path(
+    "M0.0380859 0.999268C26.0381 1.99902 23.0381 21.999 61.0381 122.999C99.0381 223.999 143.038 246.999 241.038 240.999C339.038 234.999 593.038 219.999 657.038 214.999C721.038 209.999 864.038 198.999 910.038 218.999C956.038 238.999 971.038 297.999 971.038 297.999"
+  );
+  animation: slide-down 5s ease-in 1;
+}
 
 .greeting:hover {
   cursor: pointer;
@@ -505,15 +509,6 @@ footer > a > p:hover {
 
   transform: rotate(45deg);
   animation: wave 3s ease-in-out 1.5s infinite;
-}
-
-.greeting.sliding {
-  top: -2rem;
-  left: 3rem;
-  offset-path: path(
-    "M0.0166016 1.00168C44.2666 0.250527 55.2666 251.251 199.267 279.25C343.267 307.249 401.267 271.25 543.267 261.25C685.267 251.25 731.267 359.25 731.267 359.25"
-  );
-  animation: slide-down 5s ease-in 1;
 }
 
 .home .speech-bubble {
@@ -554,13 +549,12 @@ footer > a > p:hover {
 }
 
 .projects figure img {
-  border: 2px solid var(--main);
+  box-shadow: var(--shadow);
   transition: transform 300ms ease-in-out;
 }
 
 .projects figure img:hover {
-  border-style: dashed;
-  box-shadow: var(--shadow);
+  outline: 2px dashed var(--main);
   transform: translateY(-3%);
   cursor: pointer;
 }
@@ -805,6 +799,10 @@ footer > a > p:hover {
 
 #headshot {
   z-index: 5;
+}
+
+#headshot img {
+  z-index: 7;
 }
 
 #headshot,
@@ -1365,9 +1363,10 @@ footer > a > p:hover {
 .not-found img {
   order: 2;
   position: relative;
-  z-index: 5;
+  z-index: 7;
   height: auto;
   width: 13rem;
+  animation: squirrel 2s linear infinite;
 }
 
 .not-found .speech-bubble {
@@ -1388,10 +1387,6 @@ footer > a > p:hover {
   border-top: 2px solid rgba(var(--black), 0.1);
 }
 
-.not-found img {
-  animation: squirrel 2s linear infinite;
-}
-
 @keyframes squirrel {
   20% {
     transform: rotate(2deg);
@@ -1407,17 +1402,52 @@ footer > a > p:hover {
 /* ------------------------------------------ OTHER DEVICES -------------------------------------------------- */
 
 @media (max-width: 1000px) {
-  :root {
-    --H1: 3rem;
-    --H2: 1.8rem;
-  }
-
   .hero {
     margin: 1rem;
     gap: 1rem;
   }
   .hero-text {
     flex: 1;
+  }
+
+  .greeting {
+    z-index: 5;
+  }
+
+  .greeting.sliding {
+    left: 4rem;
+    top: -1.9rem;
+    offset-path: path(
+      "M0.0195312 1.00222C20.5176 0.609327 11.8991 50.4984 58.4593 132.749C105.02 215 159.02 169 195.02 185.001"
+    );
+  }
+
+  @keyframes slide-down {
+    0% {
+      top: 0rem;
+      left: 2.5rem;
+      offset-distance: 5%;
+    }
+    5% {
+      top: 1rem;
+      left: 3rem;
+      offset-distance: 7%;
+    }
+    15% {
+      top: 4.2rem;
+      left: 6rem;
+      offset-distance: 100%;
+    }
+    17% {
+      top: 3.5rem;
+      left: 7rem;
+      offset-distance: 100%;
+    }
+    100% {
+      top: 3.5rem;
+      left: 7rem;
+      offset-distance: 100%;
+    }
   }
 
   .project-nav {
@@ -1513,6 +1543,11 @@ footer > a > p:hover {
     gap: 1rem;
   }
 
+  .nav-items li {
+    font-size: var(--H3);
+    background-color: transparent;
+  }
+
   /* -------- Home Page: Hero -------- */
   .home {
     gap: 0;
@@ -1534,42 +1569,6 @@ footer > a > p:hover {
 
   .greeting {
     gap: 0;
-  }
-
-  .greeting.sliding {
-    left: 4rem;
-    top: -1.9rem;
-    offset-path: path(
-      "M0.0195312 1.00222C20.5176 0.609327 11.8991 50.4984 58.4593 132.749C105.02 215 159.02 169 195.02 185.001"
-    );
-  }
-
-  @keyframes slide-down {
-    0% {
-      top: 0rem;
-      left: 2.5rem;
-      offset-distance: 5%;
-    }
-    5% {
-      top: 1rem;
-      left: 3rem;
-      offset-distance: 7%;
-    }
-    15% {
-      top: 4.2rem;
-      left: 6rem;
-      offset-distance: 100%;
-    }
-    17% {
-      top: 3.5rem;
-      left: 7rem;
-      offset-distance: 100%;
-    }
-    100% {
-      top: 3.5rem;
-      left: 7rem;
-      offset-distance: 100%;
-    }
   }
 
   /* -------- Home Page: Projects --------- */

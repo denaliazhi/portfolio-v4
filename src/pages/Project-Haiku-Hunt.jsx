@@ -135,9 +135,10 @@ export default function HaikuHunt() {
               product. I imagined an app that was{" "}
               <span className="highlight">
                 part-poetry forum, part-scavenger
-              </span>{" "}
-              hunt— an homage to New York City
-              that could be enjoyed by locals and
+                hunt
+              </span>
+              — an homage to New York City that
+              could be enjoyed by locals and
               outsiders alike.
             </p>
           </OneCol>
@@ -190,7 +191,7 @@ export default function HaikuHunt() {
               Each landmark would need an initial
               clue for users to guess, so I
               subsetted the data to make the work
-              easier on myself. I would target
+              easier for myself. I would target
               only monuments that were
               "fountains."
             </p>

@@ -68,8 +68,8 @@ export default function GroceryApp() {
                 I used various strategies to build
                 real world context in the
                 classroom, but I sometimes wished
-                for better tools than the ones I
-                had.
+                that better tools existed for this
+                purpose.
               </p>
             </>
           }
@@ -241,13 +241,14 @@ export default function GroceryApp() {
                   In the physical world, a shopper
                   might take a product from the
                   shelf and set it in their cart.
-                  A realistic online store could
-                  mimic that action by requiring
-                  the user to drag and drop images
-                  of products. However, most users
-                  are accustomed now to clicking
-                  on a simpler "Add to cart"
-                  button instead.
+                  An online simulation could
+                  require the user to drag and
+                  drop images of products onto an
+                  image of a cart. However, the
+                  user might not understand this
+                  requirement since most real
+                  online stores show a simple "Add
+                  to cart" button instead.
                 </p>
               </aside>
               <p>
@@ -380,14 +381,13 @@ export default function GroceryApp() {
           <h2>Final Thoughts</h2>
           <p>
             When I first planned this app, it felt
-            beyond my skillset at the time. I
-            spent many an hour browsing through
-            the React documentation and online
-            forums. As I broke through each
-            barrier to implementation, I gained
-            confidence in my own abilities
-            (imagine that?). In the future, I'd
-            love to build a suite of accessible
+            beyond my knowledge at the time. As I
+            overcame each barrier to
+            implementation, I developed greater
+            confidence in my own abilities and a
+            sense of alignment between my work and
+            values. In the future, I'd love to
+            build a suite of accessible
             educational tools like this one.
           </p>
         </OneCol>
