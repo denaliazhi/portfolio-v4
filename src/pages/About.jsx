@@ -18,7 +18,8 @@ export default function About() {
 
   return (
     <main className="about">
-      <img src="/about/title.svg" alt="" />
+      {/* <img src="/about/title.svg" alt="" /> */}
+      <h1>Some personal artifacts</h1>
       <section id="artifacts">
         <figure id="cake" onClick={handleClick}>
           <img

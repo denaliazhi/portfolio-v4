@@ -36,11 +36,11 @@ export default function Hero() {
           >
             <h1>hi</h1>
             <span id="greeting-hand"></span>
-            <span className="speech-bubble">
+            <p className="speech-bubble">
               {isAnimating
                 ? "Weeee!"
-                : "Mind giving me a push?"}
-            </span>
+                : "Give me a push?"}
+            </p>
           </div>
         </div>
         <div className="hero-text">
@@ -51,7 +51,10 @@ export default function Hero() {
               hi
             </span>
           </h1>
-          <h2>Designer + Developer</h2>
+          <h2>
+            A designer who develops. A developing
+            designer. Fan of puns.
+          </h2>
           {/* Swap on click, change flex order */}
         </div>
       </section>

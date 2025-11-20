@@ -1,9 +1,10 @@
 import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import NotFound from "./pages/Not-Found";
 import GroceryApp from "./pages/Project-Grocery-App";
 import HaikuHunt from "./pages/Project-Haiku-Hunt";
-import NotFound from "./pages/Not-Found";
+import ResearchStartup from "./pages/Project-Research-Startup";
 
 const routes = [
   {
@@ -26,6 +27,10 @@ const routes = [
       {
         path: "/Haiku-Hunt",
         element: <HaikuHunt />,
+      },
+      {
+        path: "/Research-Startup",
+        element: <ResearchStartup />,
       },
     ],
   },

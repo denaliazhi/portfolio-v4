@@ -23,9 +23,9 @@ export default function NotFound() {
             confused as you are. <br />
             <br />
             What's that? Did I write Denalia Zhi's
-            portfolio site? Of course not. What do
-            I know? I'm just a squirrel. I'm just
-            a squirrel...
+            portfolio site? Of course not. I'm
+            just a squirrel. What do I know? I'm
+            just a squirrel...
           </pre>
         </div>
         <h1>Oops! Page not found</h1>

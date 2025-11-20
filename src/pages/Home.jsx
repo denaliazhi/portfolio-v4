@@ -6,11 +6,7 @@ export default function Home() {
   return (
     <main className="home">
       <Hero />
-      <hr />
-      <ProjectsContainer
-        heading="My latest projects"
-        content={projects}
-      />
+      <ProjectsContainer content={projects} />
       {/* <TwoCol
         id="page-links"
         ratio={[1, 1]}

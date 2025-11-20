@@ -1,12 +1,10 @@
 import ImageCaption from "./Image-Caption";
 
 export default function ProjectsContainer({
-  heading,
   content,
 }) {
   return (
     <section className="projects">
-      <h2>{heading}</h2>
       <div>
         {Object.values(content).map((project) => (
           <a

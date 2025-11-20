@@ -86,42 +86,45 @@ export default function HaikuHunt() {
               assignments to practice what I'd
               learned:{" "}
             </p>
-            <Accordion
-              startOpen={true}
-              heading="1. A basic message board"
-            >
-              <p>
-                It would allow users to post
-                messages with their name and date.
-              </p>
-              <ul className="tags">
-                <li>Express routing</li>
-                <li>MVC pattern</li>
-                <li>EJS templating</li>
-              </ul>
-            </Accordion>
-            <Accordion heading="2. An inventory manager">
-              <p>
-                It would allow users to create,
-                read, update, and delete items.
-              </p>
-              <ul className="tags">
-                <li>Database operations</li>
-                <li>Fetching data from API</li>
-              </ul>
-            </Accordion>
-            <Accordion heading="3. A members-only message board">
-              <p>
-                It would allow users to sign up
-                for an account. Only signed-in
-                users would be able to post and
-                view the details of messages.
-              </p>
-              <ul className="tags">
-                <li>User authentication</li>
-                <li>Form validation</li>
-              </ul>
-            </Accordion>
+            <div className="accordion-group">
+              <Accordion
+                startOpen={true}
+                heading="1. A basic message board"
+              >
+                <p>
+                  It would allow users to post
+                  messages with their name and
+                  date.
+                </p>
+                <ul className="tags">
+                  <li>Express routing</li>
+                  <li>MVC pattern</li>
+                  <li>EJS templating</li>
+                </ul>
+              </Accordion>
+              <Accordion heading="2. An inventory manager">
+                <p>
+                  It would allow users to create,
+                  read, update, and delete items.
+                </p>
+                <ul className="tags">
+                  <li>Database operations</li>
+                  <li>Fetching data from API</li>
+                </ul>
+              </Accordion>
+              <Accordion heading="3. A members-only message board">
+                <p>
+                  It would allow users to sign up
+                  for an account. Only signed-in
+                  users would be able to post and
+                  view the details of messages.
+                </p>
+                <ul className="tags">
+                  <li>User authentication</li>
+                  <li>Form validation</li>
+                </ul>
+              </Accordion>
+            </div>
           </OneCol>
           <hr />
           <OneCol id="take">
@@ -398,56 +401,59 @@ export default function HaikuHunt() {
               Two items of particular interest to
               me are
             </p>
-            <Accordion
-              heading="Addressing the Catch-22 of Landmark Clues"
-              startOpen={true}
-            >
-              <p>
-                It turns out that writing haikus
-                for fifty fountains is too much
-                work for one person (me). As a
-                result, any landmarks without
-                clues can't be solved by users— at
-                least not by the rules of the
-                game— but only users who have
-                solved the landmarks can
-                contribute clues...
-              </p>
-              <p>
-                To fix this Catch-22, I'd remove
-                the clueless landmarks and{" "}
-                <span className="highlight">
-                  add a form through which users
-                  could submit new landmarks
-                </span>{" "}
-                for others to guess. The form
-                would require submissions to
-                include an initial clue.
-              </p>
-            </Accordion>
-            <Accordion heading="Rebuilding the frontend with React and REST API">
-              <p>
-                When writing EJS templates, I
-                found myself breaking out the code
-                into partials which I'd then{" "}
-                <code>
-                  &lt;%- include() %&gt;
-                </code>{" "}
-                in multiple files, similar to
-                React's component-style
-                architecture. However, the overall
-                effect of the former felt more
-                tedious and less readable than the
-                latter.
-              </p>
-              Later on, I learned about the
-              "Jamstack," leveraging REST APIs to
-              connect separate frontend and
-              backend implementations. With this
-              knowledge, I'd like to rebuild my
-              app utilizing React for the
-              frontend.
-            </Accordion>
+            <div className="accordion-group">
+              <Accordion
+                heading="Addressing the Catch-22 of Landmark Clues"
+                startOpen={true}
+              >
+                <p>
+                  It turns out that writing haikus
+                  for fifty fountains was too much
+                  work for one person (me). As a
+                  result, landmarks missing their
+                  initial clues can't be solved,
+                  and only users who have solved
+                  the landmarks can write clues...
+                </p>
+                <p>
+                  To fix this Catch-22, I'd remove
+                  the clueless landmarks and{" "}
+                  <span className="highlight">
+                    add a form through which users
+                    could submit new landmarks
+                  </span>{" "}
+                  for others to guess. The form
+                  would require each submission to
+                  include an initial clue.
+                </p>
+              </Accordion>
+              <Accordion heading="Rebuilding the frontend with React and REST API">
+                <p>
+                  When writing EJS templates, I
+                  found myself breaking out the
+                  code into partials which I'd
+                  then{" "}
+                  <code>
+                    &lt;%- include() %&gt;
+                  </code>{" "}
+                  in multiple files, similar to
+                  React's component-style
+                  architecture. However, the
+                  overall effect of the former
+                  felt more tedious and less
+                  readable than the latter.
+                </p>
+                <p>
+                  Later on, I learned about the
+                  "Jamstack," leveraging REST APIs
+                  to connect separate frontend and
+                  backend implementations. With
+                  this knowledge, I'd like to
+                  rebuild my app utilizing React
+                  for the frontend.
+                </p>
+              </Accordion>
+            </div>
             <ButtonBar label="Check it out">
               <a href="https://haiku-hunt.koyeb.app/">
                 Demo

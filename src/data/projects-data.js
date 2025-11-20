@@ -46,15 +46,17 @@ const projects = {
     type: ["Personal project", "Fullstack"],
     tools: ["Express", "PostgreSQL"],
   },
-  orbitl: {
-    title: "Orbitl",
+  researchStartup: {
+    title: "Research Startup",
     date: "Nov 2025",
     desc_short:
-      "A science startup's landing page",
+      "A research startup's landing page",
+    desc_long:
+      "I designed and built a website for an early-stage research startup.",
     images_featured: [
       {
-        src: "orbitl-cover.png",
-        alt: "Cover of Orbitl website",
+        src: "research-startup-cover.png",
+        alt: "Cover of research startup website",
       },
     ],
     type: [
