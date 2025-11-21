@@ -3,6 +3,7 @@ export default function ProjectsContainer({
 }) {
   return (
     <section className="projects">
+      <h2>Read about my latest work</h2>
       <div>
         {Object.values(content).map((project) => (
           <a
@@ -22,7 +23,7 @@ export default function ProjectsContainer({
                 }
               />
               <figcaption>
-                <h2>{project.title}</h2>
+                <h3>{project.title}</h3>
                 <p>{project.desc_short}</p>
                 <ul className="tags">
                   <li>{project.type}</li>

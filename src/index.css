@@ -542,7 +542,37 @@ footer > a > p:hover {
 
 /* --------------- Home Page: Projects --------------- */
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .projects h2 {
+  position: relative;
+  font-family: var(--sans-serif);
+  font-size: var(--H3);
+  font-weight: 500;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  margin: auto;
+  background-color: var(--darker-background);
+  border-radius: var(--rounded);
+}
+
+.projects h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: calc(50% - 25px);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent; /* Transparent left side */
+  border-right: 25px solid transparent; /* Transparent right side */
+  border-top: 25px solid var(--darker-background);
+}
+
+.projects h3 {
   font-family: var(--sans-serif);
   letter-spacing: 1px;
 }
