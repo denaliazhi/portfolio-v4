@@ -86,6 +86,13 @@ body {
 #root {
   min-height: 100vh;
 
+  /* Grid background from https://ibelick.com/blog/create-grid-and-dot-backgrounds-with-css-tailwind-css */
+  background-image: radial-gradient(
+    #e5e7eb 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -118,7 +125,7 @@ h4 {
 }
 
 h1 {
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--H1);
 }
 
@@ -378,7 +385,7 @@ header {
   list-style: none;
   border-radius: var(--rounded);
   background-color: var(--darker-background);
-  transition: box-shadow 100ms ease-in-out;
+  transition: outline 100ms ease-in-out;
 }
 
 .nav-items li:hover {
@@ -424,17 +431,31 @@ footer > a > p:hover {
 
 /* --------------- Home Page: Hero --------------- */
 
+.home {
+  margin: 0 2rem 4rem;
+}
+
 .hero {
-  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 3rem;
   flex-wrap: wrap;
   align-items: center;
+
+  position: relative;
+}
+
+#hero-horizon {
+  position: absolute;
+  width: 200%;
+  top: 8rem;
+  left: -90%;
+  border-top: 2px solid var(--lighter-main);
 }
 
 .hero-text {
-  z-index: 1;
+  backdrop-filter: blur(1px);
+  border-radius: var(--rounded);
   margin-top: 6rem; /* Aligns text with horizon */
   max-width: 27rem;
   display: flex;
@@ -466,12 +487,14 @@ footer > a > p:hover {
 }
 
 .hero div:first-child {
+  z-index: 1;
   position: relative;
   text-align: right;
 }
 
 #playground-slide {
   transform: scale(0.9);
+  filter: drop-shadow(var(--shadow));
 }
 
 .greeting {
@@ -519,44 +542,60 @@ footer > a > p:hover {
 
 /* --------------- Home Page: Projects --------------- */
 
-.projects {
-  margin-top: -9rem; /* Aligns ground with slide */
-  padding: 9rem 2.5rem 2rem; /* Creates ground beneath slide */
-  background-color: rgba(var(--black), 0.1);
-  border-radius: var(--rounded);
-}
-
 .projects h2 {
   font-family: var(--sans-serif);
   letter-spacing: 1px;
 }
 
 .projects > div {
-  display: flex;
-  justify-content: center;
+  max-width: 60rem;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(13rem, 1fr)
+  );
   gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
-.projects figure {
-  max-width: 18rem;
-  width: 100%;
+.projects > div a {
+  border-radius: var(--rounded);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
 
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  align-items: center;
+
+  transition: transform 300ms ease-in-out,
+    outline 300ms ease-in-out;
 }
 
-.projects figure img {
-  box-shadow: var(--shadow);
-  transition: transform 300ms ease-in-out;
-}
-
-.projects figure img:hover {
+.projects > div a:hover {
   outline: 2px dashed var(--main);
   transform: translateY(-3%);
   cursor: pointer;
+}
+
+.projects .modern figcaption {
+  text-align: left;
+  background-color: white;
+}
+
+.projects .modern figcaption h2 {
+  font-family: var(--serif);
+  font-size: var(--XS);
+  font-weight: 800;
+}
+
+.projects .modern figcaption p {
+  margin: 0.5rem 0;
+  font-size: var(--S);
+}
+
+.projects .tags > li {
+  padding-top: 0.3rem;
+  font-size: var(--S);
 }
 
 /* --------------- Home Page: Callout --------------- */
@@ -1406,12 +1445,19 @@ footer > a > p:hover {
     margin: 1rem;
     gap: 1rem;
   }
-  .hero-text {
-    flex: 1;
+
+  #hero-horizon {
+    display: none;
   }
 
-  .greeting {
-    z-index: 5;
+  .hero-text {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .hero-text h2 {
+    line-height: 0.9;
+    font-size: var(--H3);
   }
 
   .greeting.sliding {
@@ -1453,17 +1499,12 @@ footer > a > p:hover {
   .project-nav {
     display: none;
   }
-
-  .projects {
-    border-radius: 0;
-    margin-top: -10rem;
-  }
 }
+
 @media (max-width: 600px) {
   /* -------- GENERAL -------- */
   #root {
     gap: 1rem;
-    overflow: hidden;
   }
 
   main,
@@ -1562,27 +1603,14 @@ footer > a > p:hover {
     gap: 0;
   }
 
-  .hero-text,
-  .projects {
-    margin-top: 0;
-  }
-
   .greeting {
     gap: 0;
   }
 
   /* -------- Home Page: Projects --------- */
-  .projects {
-    padding: 2rem 0;
-  }
 
   .projects > div {
     gap: 2rem;
-  }
-
-  .projects figure {
-    max-width: 100%;
-    padding: 0 1rem;
   }
 
   /* -------- About Page --------- */

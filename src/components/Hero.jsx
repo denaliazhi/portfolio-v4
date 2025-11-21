@@ -51,9 +51,10 @@ export default function Hero() {
               hi
             </span>
           </h1>
+          <hr id="hero-horizon" />
           <h2>
             A designer who develops. A developing
-            designer. Fan of puns.
+            designer. Pun enthusiast.
           </h2>
           {/* Swap on click, change flex order */}
         </div>
