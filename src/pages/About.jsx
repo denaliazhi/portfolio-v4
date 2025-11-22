@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TwoCol from "../components/Two-Col";
 import Timeline from "../components/Timeline";
+import { toolkit } from "../data/toolkit-data";
 
 export default function About() {
   const DEFAULT_SPEECH = `Hey, it's me! Click on something, and I'll tell you more about it.`;
@@ -17,20 +18,21 @@ export default function About() {
       setSpeech(e.target.id);
     }
   };
-
   return (
     <main className="about">
       <h1>About</h1>
       <TwoCol
-        ratio={[1, 1]}
+        ratio={[3, 4]}
         col1={
           <>
             <h2>My journey</h2>
             <p>
-              I wrote my first program at the age
-              of 12...Wait no, that's not how it
-              went.
+              I wrote my first computer program at
+              the age of 12...Kidding, that's not
+              how it went. I took a "scenic route"
+              of sorts.
             </p>
+            <p>(Read time: 1 minute)</p>
           </>
         }
         col2={
@@ -42,7 +44,8 @@ export default function About() {
                   "An introvert goes to business school",
                 body: (
                   <p>
-                    At the age of 18, I decided to
+                    At the age of 18, I decided—
+                    instead of engineering— to
                     attend business school where I
                     learned a thing or two about
                     communication.
@@ -61,16 +64,18 @@ export default function About() {
                       <a href="https://www.youtube.com/watch?v=EXTLJmYsaUQ&t=50s">
                         whole new world
                       </a>{" "}
-                      for me.
+                      for me. I learned how to use
+                      digital tools like Figma and
+                      Adobe Illustrator.
                     </p>{" "}
                     <p>
                       Over four years, I'd design
                       for two startups, a
                       nonprofit, and a student
-                      publication. These
-                      experiences would hone my
-                      eye for detail and
-                      composition.
+                      publication in my free time.
+                      Through these experiences,
+                      I'd hone my eye for detail
+                      and composition.
                     </p>
                   </>
                 ),
@@ -80,21 +85,33 @@ export default function About() {
                 body: (
                   <>
                     <p>
-                      Out of curiosity, I took a
-                      free online CS course
-                      (CS50x) during my junior
-                      summer. By the end, I'd
-                      built my very own web app
-                      and realized, "Hey, I like
-                      to code!"
+                      During my junior summer, I
+                      took a free online CS course
+                      (Harvard's CS50x). I found
+                      more joy debugging code in
+                      an IDE than I did building
+                      any financial model in
+                      Excel. By the end, I'd built
+                      my very own web app.
                     </p>{" "}
                     <p>
-                      I decided to minor in CS
-                      alongside my major in
-                      business. Foundational
-                      courses like Data Structures
-                      would reshape my approach to
-                      problem-solving.
+                      During my remaining time in
+                      college, I'd pursue a minor
+                      in CS along with a "more
+                      technical" concentration at
+                      the business school. I'd
+                      strengthen my analytical
+                      skills through courses like
+                      Data Structures, Database
+                      Management, and Data-Driven
+                      Decision Making.
+                    </p>
+                    <hr />
+                    <p>
+                      My interest in web design
+                      and development, however,
+                      would fall by the wayside
+                      for the next three years.
                     </p>
                   </>
                 ),
@@ -108,11 +125,13 @@ export default function About() {
                       During my senior summer, I
                       interned as a data analyst
                       at a financial services
-                      company. I wasn't sure where
-                      the route would take me but
-                      figured I'd give it a shot.
-                      I went back for a full-time
-                      role.
+                      company. I liked sitting
+                      between product and
+                      engineering, but I wasn't
+                      sure if the role was for me.
+                      Well, only one way to find
+                      out. I returned for a
+                      full-time position.
                     </p>
                   </>
                 ),
@@ -121,22 +140,55 @@ export default function About() {
                 heading:
                   "Returning to creative roots",
                 body: (
-                  <p>
-                    After two introspective years,
-                    I realized that I didn't want
-                    to continue down that route. I
-                    decided to take a leap of
-                    faith that I hadn't taken in
-                    college. I left my job to
-                    learn web development on my
-                    own.
-                  </p>
+                  <>
+                    <p>
+                      Over two years out of
+                      college, I realized many
+                      things about myself. One of
+                      my realizations was that I
+                      needed to pursue a different
+                      route. I left my job to
+                      learn web development
+                      (again).
+                    </p>
+                    <p>
+                      And well, the rest is on
+                      this website.
+                    </p>
+                  </>
                 ),
               },
             ]}
           />
         }
       ></TwoCol>
+      <div id="toolkit">
+        <h2>My toolkit</h2>
+        <p>Hover over an icon for its label.</p>
+        {Object.entries(toolkit).map(
+          (category) => (
+            <div key={category[0]}>
+              <h3>
+                {category[0][0].toUpperCase() +
+                  category[0].slice(1)}
+              </h3>
+              <ul>
+                {category[1].map((item) => (
+                  <li key={item.tool}>
+                    <span
+                      className="icon"
+                      style={{
+                        backgroundImage: `url(${item.icon})`,
+                      }}
+                    ></span>
+                    <p>{item.tool}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        )}
+      </div>
       {/* <h1>Some personal artifacts</h1>
       <section id="artifacts">
         <figure id="cake" onClick={handleClick}>

@@ -543,6 +543,9 @@ footer > a > p:hover {
 /* --------------- Home Page: Projects --------------- */
 
 .projects {
+  max-width: 60rem;
+  margin: auto;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -551,13 +554,15 @@ footer > a > p:hover {
 .projects h2 {
   position: relative;
   font-family: var(--sans-serif);
-  font-size: var(--H3);
+  font-size: var(--P);
   font-weight: 500;
   width: fit-content;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   margin: 0 auto 2rem;
   background-color: var(--darker-background);
   border-radius: var(--rounded);
+
+  transition: transform 300ms ease-out;
 }
 
 .projects h2::after {
@@ -570,6 +575,13 @@ footer > a > p:hover {
   border-left: 25px solid transparent; /* Transparent left side */
   border-right: 25px solid transparent; /* Transparent right side */
   border-top: 25px solid var(--darker-background);
+
+  transition: transform 300ms ease-out;
+}
+
+.projects h2:hover,
+.projects h2:hover::after {
+  transform: translateY(5px);
 }
 
 .projects h3 {
@@ -578,9 +590,6 @@ footer > a > p:hover {
 }
 
 .projects > div {
-  max-width: 60rem;
-  margin: auto;
-
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -846,7 +855,7 @@ footer > a > p:hover {
 /* ---- Timeline ---- */
 .about .two-col > div:last-of-type {
   gap: 0;
-  max-height: 22rem;
+  max-height: 30rem;
   padding-left: 3rem;
   overflow-y: auto;
   scrollbar-color: transparent transparent;
@@ -912,6 +921,7 @@ footer > a > p:hover {
   top: 1.5rem;
   left: 0;
   background-image: url("about/car.png");
+  filter: drop-shadow(var(--shadow));
   transform: rotate(20deg);
 }
 
@@ -961,6 +971,70 @@ footer > a > p:hover {
 .about .two-col .accordion button {
   text-align: left;
   gap: 0;
+}
+
+/* ------------ Toolkit --------- */
+
+#toolkit h3 {
+  font-size: var(--XXS);
+  font-weight: 300;
+}
+
+#toolkit > p {
+  width: 100%;
+}
+
+#toolkit,
+#toolkit ul,
+#toolkit li {
+  display: flex;
+}
+#toolkit {
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+#toolkit ul {
+  gap: 0.8rem;
+}
+#toolkit li {
+  position: relative;
+}
+
+#toolkit li p {
+  font-size: var(--XS);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+
+  transition: opacity 500ms ease;
+}
+
+#toolkit .icon {
+  display: inline-block;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0.5rem 0;
+
+  transition: transform 500ms ease;
+}
+
+#toolkit .icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#toolkit .icon:hover + p {
+  opacity: 1;
+}
+
+#toolkit > div {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--darker-background);
+  border-radius: var(--rounded);
 }
 
 /*  */
