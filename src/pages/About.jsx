@@ -80,12 +80,13 @@ export default function About() {
                 body: (
                   <>
                     <p>
-                      During my junior summer, I
-                      took a free online CS course
-                      (CS50x) out of curiosity. By
-                      the end, I'd built my very
-                      own web app, and I realized,
-                      "Hey, I like to code!"
+                      Out of curiosity, I took a
+                      free online CS course
+                      (CS50x) during my junior
+                      summer. By the end, I'd
+                      built my very own web app
+                      and realized, "Hey, I like
+                      to code!"
                     </p>{" "}
                     <p>
                       I decided to minor in CS
@@ -107,10 +108,11 @@ export default function About() {
                       During my senior summer, I
                       interned as a data analyst
                       at a financial services
-                      company. I hadn't expected
-                      to take that route, but I
-                      did. Then, I took the return
-                      offer.
+                      company. I wasn't sure where
+                      the route would take me but
+                      figured I'd give it a shot.
+                      I went back for a full-time
+                      role.
                     </p>
                   </>
                 ),
@@ -120,12 +122,14 @@ export default function About() {
                   "Returning to creative roots",
                 body: (
                   <p>
-                    Over two years, I analyzed
-                    data. More importantly, I
-                    analyzed myself. I realized
-                    that despite finding "success"
-                    in my role, I'd lost a big
-                    part of myself.
+                    After two introspective years,
+                    I realized that I didn't want
+                    to continue down that route. I
+                    decided to take a leap of
+                    faith that I hadn't taken in
+                    college. I left my job to
+                    learn web development on my
+                    own.
                   </p>
                 ),
               },
