@@ -13,12 +13,13 @@ export default function Accordion({
   };
 
   return (
-    <div className="accordion">
+    <div
+      className={`accordion ${
+        isOpen ? "open" : ""
+      }`}
+    >
       <h4 className="accordion-header">
-        <button
-          onClick={handleClick}
-          className={isOpen ? "open" : null}
-        >
+        <button onClick={handleClick}>
           {heading}
         </button>
       </h4>

@@ -555,7 +555,7 @@ footer > a > p:hover {
   font-weight: 500;
   width: fit-content;
   padding: 0.5rem 2rem;
-  margin: auto;
+  margin: 0 auto 2rem;
   background-color: var(--darker-background);
   border-radius: var(--rounded);
 }
@@ -823,15 +823,147 @@ footer > a > p:hover {
 
 /* ------------ About Page ------------- */
 
+.about {
+  padding: 2rem;
+}
 .about h1 {
-  font-size: var(--H3);
+  font-size: var(--H2);
   text-align: center;
 }
-
-.about {
-  gap: 1.5rem;
+.about h2 {
+  font-size: var(--S);
+  font-weight: 800;
 }
 
+.about .two-col {
+  position: relative;
+}
+
+.about .two-col > div {
+  width: 22rem;
+}
+
+/* ---- Timeline ---- */
+.about .two-col > div:last-of-type {
+  gap: 0;
+  max-height: 22rem;
+  padding-left: 3rem;
+  overflow-y: auto;
+  scrollbar-color: transparent transparent;
+  position: relative;
+}
+
+.about .two-col::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none; /* Interact with content beneath the fade */
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.about .two-col li {
+  list-style: none;
+  position: relative;
+}
+
+/* Timeline dates */
+.about .two-col li::before {
+  z-index: 1;
+  font-size: var(--XS);
+  position: absolute;
+  left: -2rem;
+  background-color: white;
+  padding: 0.1rem 0;
+}
+.about .two-col li:first-child::before {
+  content: "2019";
+}
+.about .two-col li:nth-child(3)::before {
+  content: "2021";
+}
+.about .two-col li:nth-child(4)::before {
+  content: "2023";
+}
+.about .two-col li:nth-child(5)::before {
+  content: "2025";
+}
+
+/* Timeline marker */
+.timeline-marker {
+  z-index: 5;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  height: 2.5rem;
+  width: 4rem;
+  top: 1.5rem;
+  left: 0;
+  background-image: url("about/car.png");
+  transform: rotate(20deg);
+}
+
+/* Timeline line */
+.about .two-col li::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -1.35rem;
+  height: 150%;
+  border-left: 1px solid black;
+}
+
+/* Timeline accordion */
+
+.about .two-col .accordion,
+.about .two-col .accordion-body {
+  padding: 0;
+}
+
+.about .two-col .accordion,
+.about .two-col .accordion-body {
+  padding: 0.5rem 0.8rem;
+}
+.about .two-col .accordion:not(.open) {
+  background-color: var(--darker-background);
+  border: 1px transparent var(--main);
+}
+
+.about .two-col .accordion.open {
+  background-color: var(--background);
+  border: 1px solid var(--main);
+  filter: drop-shadow(var(--shadow));
+}
+
+.about .accordion.open .accordion-header {
+  padding-top: 1rem;
+}
+
+/* Get rid of default button */
+.about .two-col .accordion button::before {
+  width: 0;
+  height: 0;
+  background: none;
+}
+.about .two-col .accordion button {
+  text-align: left;
+  gap: 0;
+}
+
+/*  */
 .about .speech-bubble {
   font-size: 0.6rem;
   margin-left: -2rem;
@@ -1238,7 +1370,7 @@ footer > a > p:hover {
   transition: transform 100ms ease-in-out;
 }
 
-.accordion button.open::before {
+.accordion.open button::before {
   transform: rotate(90deg);
 }
 
@@ -1650,8 +1782,13 @@ footer > a > p:hover {
 
   /* -------- About Page --------- */
 
-  .about {
-    gap: 1rem;
+  .about .two-col > div:last-of-type {
+    max-height: fit-content;
+    margin-left: -1.5rem;
+  }
+
+  .about .two-col::after {
+    background: none;
   }
 
   /* .about > img:first-of-type {

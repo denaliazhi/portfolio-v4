@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TwoCol from "../components/Two-Col";
+import Timeline from "../components/Timeline";
 
 export default function About() {
   const DEFAULT_SPEECH = `Hey, it's me! Click on something, and I'll tell you more about it.`;
@@ -18,8 +20,120 @@ export default function About() {
 
   return (
     <main className="about">
-      {/* <img src="/about/title.svg" alt="" /> */}
-      <h1>Some personal artifacts</h1>
+      <h1>About</h1>
+      <TwoCol
+        ratio={[1, 1]}
+        col1={
+          <>
+            <h2>My journey</h2>
+            <p>
+              I wrote my first program at the age
+              of 12...Wait no, that's not how it
+              went.
+            </p>
+          </>
+        }
+        col2={
+          <Timeline
+            contents={[
+              {
+                open: true,
+                heading:
+                  "An introvert goes to business school",
+                body: (
+                  <p>
+                    At the age of 18, I decided to
+                    attend business school where I
+                    learned a thing or two about
+                    communication.
+                  </p>
+                ),
+              },
+              {
+                heading:
+                  "Business with a side of design",
+                body: (
+                  <>
+                    <p>
+                      During my freshman fall, I
+                      took a design elective that
+                      opened up a{" "}
+                      <a href="https://www.youtube.com/watch?v=EXTLJmYsaUQ&t=50s">
+                        whole new world
+                      </a>{" "}
+                      for me.
+                    </p>{" "}
+                    <p>
+                      Over four years, I'd design
+                      for two startups, a
+                      nonprofit, and a student
+                      publication. These
+                      experiences would hone my
+                      eye for detail and
+                      composition.
+                    </p>
+                  </>
+                ),
+              },
+              {
+                heading: "From design to code",
+                body: (
+                  <>
+                    <p>
+                      During my junior summer, I
+                      took a free online CS course
+                      (CS50x) out of curiosity. By
+                      the end, I'd built my very
+                      own web app, and I realized,
+                      "Hey, I like to code!"
+                    </p>{" "}
+                    <p>
+                      I decided to minor in CS
+                      alongside my major in
+                      business. Foundational
+                      courses like Data Structures
+                      would reshape my approach to
+                      problem-solving.
+                    </p>
+                  </>
+                ),
+              },
+              {
+                heading:
+                  "A detour into data analytics",
+                body: (
+                  <>
+                    <p>
+                      During my senior summer, I
+                      interned as a data analyst
+                      at a financial services
+                      company. I hadn't expected
+                      to take that route, but I
+                      did. Then, I took the return
+                      offer.
+                    </p>
+                  </>
+                ),
+              },
+              {
+                heading:
+                  "Returning to creative roots",
+                body: (
+                  <p>
+                    Over two years, I analyzed
+                    data. More importantly, I
+                    analyzed myself. I realized
+                    that despite finding "success"
+                    in my role, I'd lost a big
+                    part of myself.
+                  </p>
+                ),
+              },
+            ]}
+          />
+        }
+      ></TwoCol>
+      {/* <h1>Some personal artifacts</h1>
       <section id="artifacts">
         <figure id="cake" onClick={handleClick}>
           <img
@@ -133,7 +247,7 @@ export default function About() {
           />
           <figcaption>Meow?</figcaption>
         </figure>
-      </section>
+      </section> */}
     </main>
   );
 }
