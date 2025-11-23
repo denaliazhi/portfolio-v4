@@ -1,4 +1,4 @@
-import { projects } from "../data/projects-data";
+import { projects } from "../data/projects";
 import ProjectHeader from "../components/Project-Header";
 import ProjectNav from "../components/Project-Nav";
 import Carousel from "../components/Carousel";

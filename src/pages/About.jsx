@@ -1,26 +1,15 @@
 import { useState } from "react";
+import OneCol from "../components/One-Col";
 import TwoCol from "../components/Two-Col";
 import Timeline from "../components/Timeline";
-import { toolkit } from "../data/toolkit-data";
+import Artifacts from "../components/Artifacts";
+import { toolkit } from "../data/toolkit";
 
 export default function About() {
-  const DEFAULT_SPEECH = `Hey, it's me! Click on something, and I'll tell you more about it.`;
-  const [speech, setSpeech] =
-    useState("headshot");
-
-  const handleClick = (e) => {
-    if (
-      e.target.nodeName === "IMG" ||
-      e.target.nodeName === "FIGCAPTION"
-    ) {
-      setSpeech(e.target.parentNode.id);
-    } else {
-      setSpeech(e.target.id);
-    }
-  };
   return (
     <main className="about">
       <h1>About</h1>
+      <Artifacts></Artifacts>
       <TwoCol
         ratio={[3, 4]}
         col1={
@@ -81,7 +70,8 @@ export default function About() {
                 ),
               },
               {
-                heading: "From design to code",
+                heading:
+                  "From design to computer science",
                 body: (
                   <>
                     <p>
@@ -125,7 +115,7 @@ export default function About() {
                       During my senior summer, I
                       interned as a data analyst
                       at a financial services
-                      company. I liked sitting
+                      company. I liked working
                       between product and
                       engineering, but I wasn't
                       sure if the role was for me.
@@ -142,13 +132,14 @@ export default function About() {
                 body: (
                   <>
                     <p>
-                      Over two years out of
-                      college, I realized many
-                      things about myself. One of
-                      my realizations was that I
-                      needed to pursue a different
-                      route. I left my job to
-                      learn web development
+                      During my first two years
+                      out of college, I made
+                      several important
+                      realizations about myself.
+                      One of my realizations was
+                      that I needed to pursue a
+                      different role. I left my
+                      job to learn web development
                       (again).
                     </p>
                     <p>
@@ -164,7 +155,9 @@ export default function About() {
       ></TwoCol>
       <div id="toolkit">
         <h2>My toolkit</h2>
-        <p>Hover over an icon for its label.</p>
+        <p>
+          Hover or tap on an icon for its label.
+        </p>
         {Object.entries(toolkit).map(
           (category) => (
             <div key={category[0]}>
@@ -189,121 +182,6 @@ export default function About() {
           )
         )}
       </div>
-      {/* <h1>Some personal artifacts</h1>
-      <section id="artifacts">
-        <figure id="cake" onClick={handleClick}>
-          <img
-            src="/about/cake.png"
-            alt=""
-            width="145"
-            height="90"
-          />
-          <figcaption>Is it cake...?</figcaption>
-        </figure>
-        <figure id="hiking" onClick={handleClick}>
-          <img
-            src="/about/hiking.png"
-            alt=""
-            width="75"
-            height="90"
-          />
-          <figcaption>
-            How do you get a cow off the trail?
-          </figcaption>
-        </figure>
-
-        <div id="headshot">
-          <img
-            src="/about/headshot.png"
-            alt=""
-            width="200"
-            height="210"
-            onClick={handleClick}
-          />
-          {speech === "headshot" && (
-            <pre className="speech-bubble">
-              {DEFAULT_SPEECH}
-            </pre>
-          )}
-          {speech === "cake" && (
-            <pre className="speech-bubble">
-              <a href="https://share.google/e8iDkdX2rgz8q1EK6">
-                <b>Is it cake?</b>
-              </a>{" "}
-              Yes! I baked a chiffon roll cake
-              shaped like frogs on a log.
-              <br />
-              <br />I love getting{" "}
-              <a href="https://www.instagram.com/bydenalia/?hl=en">
-                creative
-              </a>{" "}
-              in the kitchen. They say baking is a
-              science. I say, 'A science{" "}
-              <em>experiment</em>.'
-            </pre>
-          )}
-          {speech === "hiking" && (
-            <pre className="speech-bubble">
-              <b>
-                How do you get a cow off the
-                trail?
-              </b>{" "}
-              Ask it to moo-ve.
-              <br />
-              <br />
-              When I'm not online, I'm likely
-              outdoors. In August, I went on a
-              4-day hike along the Alta Via 1.
-            </pre>
-          )}
-          {speech === "snorkeling" && (
-            <pre className="speech-bubble">
-              <b>
-                What happens if you snorkel with
-                strangers?
-              </b>{" "}
-              There's a 100% chance you end up
-              with something in common!
-              <br />
-              <br />I shared this cool experience
-              (pun-intended) with hostel-mates in
-              Iceland.
-            </pre>
-          )}
-          {speech === "cat" && (
-            <pre className="speech-bubble">
-              This is my cat after I caught her
-              red-handed (pawed?) on the toilet
-              seat...
-            </pre>
-          )}
-        </div>
-
-        <figure
-          id="snorkeling"
-          onClick={handleClick}
-        >
-          <img
-            src="/about/snorkeling.png"
-            alt=""
-            width="75"
-            height="90"
-          />
-          <figcaption>
-            What happens if you snorkel with
-            strangers?
-          </figcaption>
-        </figure>
-        <figure id="cat" onClick={handleClick}>
-          <img
-            src="/about/cat.png"
-            alt=""
-            width="116"
-            height="90"
-          />
-          <figcaption>Meow?</figcaption>
-        </figure>
-      </section> */}
     </main>
   );
 }
