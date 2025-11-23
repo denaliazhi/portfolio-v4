@@ -15,9 +15,9 @@
   /* Font sizing */
   --H1: 5rem;
   --H2: 2rem;
-  --H3: 1.7rem;
-  --P: 1.5rem;
-  --S: 1.2rem;
+  --H3: 1.5rem;
+  --P: 1.7rem;
+  --S: 1.5rem;
   --XS: 1rem;
   --XXS: 0.8rem;
 }
@@ -135,6 +135,7 @@ h2 {
 
 h3 {
   font-size: var(--H3);
+  font-weight: 700;
 }
 
 p,
@@ -232,6 +233,7 @@ a:active {
 }
 
 button {
+  font-family: var(--sans-serif);
   border: none;
   background-color: transparent;
 }
@@ -247,6 +249,16 @@ button {
 hr {
   opacity: 30%;
 }
+
+/* img.allow-zoom {
+  transition: transform 300ms ease-in;
+}
+img.allow-zoom:hover {
+  transform: scale(2);
+  z-index: 100;
+  position: relative;
+  cursor: pointer;
+} */
 
 /* Animations */
 
@@ -589,6 +601,7 @@ footer > a > p:hover {
 
 .projects h3 {
   font-family: var(--sans-serif);
+  font-size: var(--P);
   letter-spacing: 1px;
 }
 
@@ -636,8 +649,9 @@ footer > a > p:hover {
 }
 
 .projects .modern figcaption p {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.7rem 0;
   font-size: var(--S);
+  line-height: 0.8;
 }
 
 .projects .tags > li {
@@ -885,13 +899,13 @@ footer > a > p:hover {
   gap: 0.7rem;
 }
 
-.about .two-col li {
+.timeline-content li {
   list-style: none;
   position: relative;
 }
 
 /* Timeline dates */
-.about .two-col li::before {
+.timeline-content li::before {
   z-index: 1;
   font-size: var(--XS);
   position: absolute;
@@ -899,16 +913,16 @@ footer > a > p:hover {
   background-color: white;
   padding: 0.1rem 0;
 }
-.about .two-col li:first-child::before {
+.timeline-content li:first-child::before {
   content: "2019";
 }
-.about .two-col li:nth-child(3)::before {
+.timeline-content li:nth-child(3)::before {
   content: "2021";
 }
-.about .two-col li:nth-child(4)::before {
+.timeline-content li:nth-child(4)::before {
   content: "2023";
 }
-.about .two-col li:nth-child(5)::before {
+.timeline-content li:nth-child(5)::before {
   content: "2025";
 }
 
@@ -928,7 +942,7 @@ footer > a > p:hover {
 }
 
 /* Timeline line */
-.about .two-col li::after {
+.timeline-content li::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -938,41 +952,74 @@ footer > a > p:hover {
   border-left: 1px solid black;
 }
 
+.timeline-content a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--lighter-main);
+  transition: text-decoration 200ms ease-in-out;
+}
+
+.timeline-content a:hover {
+  text-decoration-color: var(--main);
+}
+
 /* Timeline accordion */
 
-.about .two-col .accordion,
-.about .two-col .accordion-body {
+.timeline-content .accordion,
+.timeline-content .accordion-body {
   padding: 0;
 }
 
-.about .two-col .accordion,
-.about .two-col .accordion-body {
+.timeline-content .accordion,
+.timeline-content .accordion-body {
   padding: 0.5rem 0.8rem;
 }
-.about .two-col .accordion:not(.open) {
+.timeline-content .accordion:not(.open) {
   background-color: var(--darker-background);
   border: 1px transparent var(--main);
 }
 
-.about .two-col .accordion.open {
+.timeline-content .accordion.open {
   background-color: var(--background);
   border: 1px solid var(--main);
   filter: drop-shadow(var(--shadow));
 }
 
-.about .accordion.open .accordion-header {
+.timeline-content
+  .accordion.open
+  .accordion-header {
   padding-top: 1rem;
 }
 
 /* Get rid of default button */
-.about .two-col .accordion button::before {
+.timeline-content .accordion button::before {
   width: 0;
   height: 0;
   background: none;
 }
-.about .two-col .accordion button {
+.timeline-content .accordion button {
   text-align: left;
   gap: 0;
+}
+
+/* Show/collapse all */
+.about .two-col > div:last-of-type > button {
+  z-index: 5;
+  position: sticky;
+  font-size: var(--P);
+  color: var(--lighter-main);
+  left: 50%;
+  margin-top: 1rem;
+  cursor: pointer;
+
+  transition: color 200ms ease-in-out;
+}
+
+.about
+  .two-col
+  > div:last-of-type
+  > button:hover {
+  color: var(--main);
 }
 
 /* ------------ Toolkit --------- */
@@ -1089,7 +1136,7 @@ footer > a > p:hover {
   font-size: var(--S);
   max-width: 40ch;
   padding: 0.7rem 1rem;
-  transform: translate(50%, -50%);
+  transform: translate(40%, -50%);
 }
 #headshot .speech-bubble p:nth-child(2) {
   margin-top: 0.5rem;
@@ -1130,7 +1177,7 @@ footer > a > p:hover {
   max-width: 15ch;
 }
 #artifacts figure:nth-child(2) {
-  align-self: flex-end;
+  align-self: center;
 }
 #artifacts figure:nth-child(3) {
   align-self: flex-start;
@@ -1717,7 +1764,6 @@ footer > a > p:hover {
 
   .hero-text h2 {
     line-height: 0.9;
-    font-size: var(--H3);
   }
 
   .greeting.sliding {
@@ -1763,6 +1809,11 @@ footer > a > p:hover {
 
 @media (max-width: 600px) {
   /* -------- GENERAL -------- */
+  :root {
+    --P: 1.5rem;
+    --S: 1.3rem;
+  }
+
   #root {
     gap: 1rem;
   }
@@ -1891,8 +1942,6 @@ footer > a > p:hover {
 
   #artifacts {
     padding-bottom: 3.5rem;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     gap: 0 1rem;
     flex-wrap: wrap;
     justify-content: center;
@@ -1919,8 +1968,9 @@ footer > a > p:hover {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
-  #headshot .speech-bubble::before {
-    box-shadow: none;
+  #headshot .speech-bubble::before,
+  #headshot .speech-bubble::after {
+    display: none;
   }
 
   /* -------- Project Page --------- */

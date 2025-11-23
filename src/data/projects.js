@@ -2,8 +2,7 @@ const projects = {
   haikuHunt: {
     title: "Haiku Hunt",
     date: "Oct 2025",
-    desc_short:
-      "A poetic search for landmarks around NYC",
+    desc_short: "A poetic search for landmarks",
     desc_long:
       "I built a platform where users guess landmarks based on haikus and write poems of their own.",
     images_featured: [
@@ -16,7 +15,7 @@ const projects = {
         alt: "Key features",
       },
     ],
-    type: ["Personal project"],
+    type: ["Personal"],
     tools: ["Express", "PostgreSQL"],
   },
 
@@ -45,14 +44,14 @@ const projects = {
         alt: "Target audience",
       },
     ],
-    type: ["Personal project"],
+    type: ["Personal"],
     tools: ["React"],
   },
   researchStartup: {
     title: "Orbitl",
     date: "Nov 2025",
     desc_short:
-      "A clean launch page for a research startup",
+      "A clean launch for a research startup",
     desc_long:
       "I designed and built a website for an early-stage research startup.",
     images_featured: [
@@ -61,7 +60,7 @@ const projects = {
         alt: "Cover of research startup website",
       },
     ],
-    type: ["Client project"],
+    type: ["Client"],
     tools: ["Wordpress"],
   },
 };

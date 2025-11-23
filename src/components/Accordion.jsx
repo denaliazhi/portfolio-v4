@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Accordion({
   startOpen = false,
@@ -11,6 +11,9 @@ export default function Accordion({
   const handleClick = () => {
     setOpen(!isOpen);
   };
+  useEffect(() => {
+    setOpen(startOpen);
+  }, [startOpen]);
 
   return (
     <div

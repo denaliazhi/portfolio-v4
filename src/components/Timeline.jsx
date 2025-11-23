@@ -1,10 +1,13 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Accordion from "../components/Accordion";
 
 export default function Timeline({ contents }) {
   const timelineRef = useRef();
+  const [showAll, setShowAll] = useState(false);
 
-  const handleClick = (e) => {
+  const handleScroll = (e) => {
+    console.log(e.target);
+    if (e.target.nodeName === "A") return;
     e.preventDefault();
     timelineRef.current
       .querySelector(
@@ -14,19 +17,10 @@ export default function Timeline({ contents }) {
         behavior: "smooth",
         block: "start",
       });
+  };
 
-    // const mouseX = e.clientX;
-    // const mouseY = e.clientY;
-    // const movableElement =
-    //   timelineRef.current.querySelector(
-    //     ".timeline-marker"
-    //   );
-    // const elementHeight =
-    //   movableElement.offsetHeight;
-
-    // movableElement.style.top =
-    //   mouseY - 100 + "px";
-    // movableElement.style.left = 0 + "px";
+  const handleShowAll = () => {
+    setShowAll(!showAll);
   };
 
   return (
@@ -42,18 +36,24 @@ export default function Timeline({ contents }) {
               " ",
               "-"
             )}
-            onClick={handleClick}
+            onClick={handleScroll}
             id={item.heading.replaceAll(" ", "-")}
           >
             <Accordion
               heading={item.heading}
-              startOpen={item.open}
+              startOpen={item.open || showAll}
             >
               {item.body}
             </Accordion>
           </li>
         ))}
       </ul>
+      <button
+        type="button"
+        onClick={handleShowAll}
+      >
+        {showAll ? "Collapse all" : "Show all"}
+      </button>
     </>
   );
 }

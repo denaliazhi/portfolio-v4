@@ -30,7 +30,7 @@ export default function HaikuHunt() {
           ></Carousel>
           <TwoCol
             id="background"
-            ratio={[3, 2]}
+            ratio={[5, 4]}
             col1={
               <>
                 <h2>Background</h2>
@@ -45,8 +45,8 @@ export default function HaikuHunt() {
                   cone."
                 </p>
                 <p>
-                  All it took to play was
-                  observation, yet even{" "}
+                  Observation was all it took to
+                  play, yet even{" "}
                   <span className="highlight">
                     in the most mundane
                     discoveries, we found reasons

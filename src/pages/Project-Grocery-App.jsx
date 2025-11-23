@@ -39,7 +39,7 @@ export default function GroceryApp() {
         />
         <TwoCol
           id="background"
-          ratio={[3, 2]}
+          ratio={[5, 4]}
           col1={
             <>
               <h2>Background</h2>
