@@ -18,13 +18,9 @@ export default function About() {
             <h2>How'd I get here?</h2>
             <p>
               I wrote my first computer program at
-              the age of 12...Kidding, that's not
-              how it went.
+              the age of 12...kidding.
             </p>
-            <p>
-              I took "the scenic route" of sorts.
-              (Read time: 1 minute)
-            </p>
+            <p>(Read time: 1 minute)</p>
           </>
         }
         col2={
@@ -39,8 +35,7 @@ export default function About() {
             <Callout
               icon="/odin-projects/etch-a-sketch.png"
               content={{
-                heading:
-                  "Progress with The Odin Project",
+                heading: "The Odin Project",
                 body: [
                   "Five months of learning web development",
                 ],

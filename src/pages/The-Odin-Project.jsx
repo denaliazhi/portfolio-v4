@@ -23,7 +23,8 @@ export default function OdinProject() {
         This gallery showcases five months of my
         learnings with The Odin Project— a
         self-paced, open source curriculum for
-        aspiring web developers— in 2025.
+        aspiring web developers. Completed in
+        2025.
       </p>
       <section class="projects">
         <div>

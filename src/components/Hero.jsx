@@ -47,7 +47,10 @@ export default function Hero() {
           <h1>My name is</h1>
           <h1>
             Denalia Z
-            <span className="letter-placeholder">
+            <span
+              className="letter-placeholder"
+              onClick={handleClick}
+            >
               hi
             </span>
           </h1>

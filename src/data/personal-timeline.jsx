@@ -18,15 +18,15 @@ export const personalTimeline = [
       <>
         <p>
           During my freshman fall, I took a design
-          elective that opened up a{" "}
+          elective that opened a{" "}
           <a
             href="https://www.youtube.com/watch?v=EXTLJmYsaUQ&t=50s"
             target="_blank"
           >
             whole new world
           </a>{" "}
-          for me. I learned how to use digital
-          tools like Figma and Adobe Illustrator.
+          for me, as I learned about tools like
+          Figma and Adobe Illustrator.
         </p>{" "}
         <p>
           Over four years, I'd design for two
@@ -51,24 +51,24 @@ export const personalTimeline = [
           >
             CS50x
           </a>
-          ). I found more joy debugging code than
-          I did writing discounted cash flows. By
-          the end, I'd built my very own web app.
+          ). By the end, I'd built my own web app.
+          I found more joy in debugging code than
+          I ever did writing discounted cash
+          flows.
         </p>{" "}
         <p>
-          During my remaining time in college, I'd
-          pursue a minor in CS along with a "more
-          technical" concentration at the business
-          school. I'd strengthen my analytical
-          skills through courses like Data
-          Structures, Database Management, and
-          Data-Driven Decision Making.
+          I'd go on to pursue a minor in CS along
+          with a "more technical" concentration at
+          the business school. I'd strengthen my
+          analytical skills through courses like
+          Data Structures, Database Management,
+          and Data-Driven Decision Making.
         </p>
         <hr />
         <p>
           My interests in design and web
-          development, however, would fall by the
-          wayside for the next three years.
+          development, however, would take a
+          backseat.
         </p>
       </>
     ),
@@ -81,10 +81,10 @@ export const personalTimeline = [
           During my senior summer, I interned as a
           data analyst at a financial services
           company. While I liked working between
-          product and engineering, I wasn't quite
-          sure the role was for me. Well, only one
-          way to find out. I returned for a
-          full-time position.
+          product and engineering, I wasn't sure
+          the role was for me. Well, I'd give it a
+          shot. I returned for a full-time
+          position.
         </p>
       </>
     ),
@@ -94,13 +94,14 @@ export const personalTimeline = [
     body: (
       <>
         <p>
-          After college, I came to several
-          personal and professional realizations.
-          One of them was that I needed to pursue
-          a different path for myself.
+          During my two years as a data analyst, I
+          came to several realizations which led
+          me, ultimately, to pursue a different
+          path for myself.
         </p>
         <p>
-          And well, the rest is on this website.
+          And that's why this website exists
+          :&#41;
         </p>
       </>
     ),
