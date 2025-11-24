@@ -1760,6 +1760,17 @@ footer > a > p:hover {
   max-width: 70ch;
 }
 
+.odin > p a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--lighter-main);
+  transition: text-decoration 200ms ease-in-out;
+}
+
+.odin > p a:hover {
+  text-decoration-color: var(--main);
+}
+
 .odin figure {
   position: relative;
 }

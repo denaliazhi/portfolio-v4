@@ -8,11 +8,20 @@ export default function Hero() {
   };
 
   useEffect(() => {
+    // Sound effect for slide animation
+    const wee = new Audio(
+      "/home/wee-floraphonic.mp3"
+    );
     if (isAnimating) {
+      wee.play();
       setTimeout(() => {
         setIsAnimating(false);
       }, 5000);
     }
+    return () => {
+      wee.pause();
+      wee.currentTime = 0;
+    };
   }, [isAnimating]);
 
   return (

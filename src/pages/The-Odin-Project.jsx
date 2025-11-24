@@ -21,8 +21,14 @@ export default function OdinProject() {
       <h1>From zero to full-stack</h1>
       <p>
         This gallery showcases five months of my
-        learnings with The Odin Project— a
-        self-paced, open source curriculum for
+        learnings with{" "}
+        <a
+          href="https://www.theodinproject.com/about"
+          target="__blank"
+        >
+          The Odin Project
+        </a>
+        — a self-paced, open source curriculum for
         aspiring web developers. Completed in
         2025.
       </p>
