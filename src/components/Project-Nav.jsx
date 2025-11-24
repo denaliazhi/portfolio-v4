@@ -4,7 +4,9 @@ export default function ProjectNav({
   sections,
   articleRef,
 }) {
-  const [showNav, setShowNav] = useState(true);
+  const [showNav, setShowNav] = useState(
+    window.innerWidth > 1000
+  );
 
   const [activeSection, setActiveSection] =
     useState(null);
