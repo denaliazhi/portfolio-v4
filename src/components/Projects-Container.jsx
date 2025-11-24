@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import ProjectCard from "./Project-Card";
 
 export default function ProjectsContainer({
   content,
@@ -38,28 +39,21 @@ export default function ProjectsContainer({
                     )}`
               }
             >
-              <figure className="image-caption modern">
-                <img
-                  src={`/projects/${project.images_featured[0].src}`}
-                  alt={
-                    project.images_featured[0].alt
-                  }
-                />
-                <figcaption>
-                  <h3>{project.title}</h3>
-                  <p>{project.desc_short}</p>
-                  <ul className="tags">
-                    <li>{project.type}</li>
-                    {project.tools.map((tool) => (
-                      <li
-                        key={`${project.title}-${tool}`}
-                      >
-                        {tool}
-                      </li>
-                    ))}
-                  </ul>
-                </figcaption>
-              </figure>
+              <ProjectCard
+                project={{
+                  image: {
+                    src: `/projects/${project.images_featured[0].src}`,
+                    alt: project
+                      .images_featured[0].alt,
+                  },
+                  title: project.title,
+                  desc: project.desc_short,
+                  tags: [
+                    ...project.type,
+                    ...project.tools,
+                  ],
+                }}
+              />
             </a>
           );
         })}

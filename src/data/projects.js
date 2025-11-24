@@ -16,7 +16,7 @@ const projects = {
       },
     ],
     type: ["Personal"],
-    tools: ["Express", "PostgreSQL"],
+    tools: ["Express", "pSQL"],
   },
 
   groceryShop: {
