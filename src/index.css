@@ -425,6 +425,8 @@ footer {
 footer > a > p {
   font-size: var(--S);
   opacity: 0.5;
+
+  transition: opacity 200ms ease-in-out;
 }
 
 footer > a > p:hover {
@@ -437,11 +439,25 @@ footer > a > p:hover {
   gap: 0.5rem;
 }
 
-.socials .icon:first-of-type {
+.socials .icon {
   display: block;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  filter: saturate(0) brightness(0);
+
+  transition: transform 200ms ease-in-out;
+}
+
+.socials .icon:hover {
+  transform: scale(1.2);
+}
+
+#linkedin .icon {
   background-image: url("icons/linked-in.png");
+}
+
+#github .icon {
+  background-image: url("icons/github.png");
 }
 
 /* --------------- Home Page: Hero --------------- */
@@ -1290,9 +1306,9 @@ footer > a > p:hover {
   cursor: pointer;
 }
 
-/* .project-nav .selected-anchor {
-  background-color: rgba(var(--black), 0.1);
-} */
+.project-nav-icon {
+  display: none;
+}
 
 .project-page article {
   max-width: 42rem;
@@ -1876,8 +1892,34 @@ footer > a > p:hover {
     }
   }
 
+  .project-nav h2 {
+    font-size: var(--P);
+  }
+
+  .project-nav-icon {
+    display: block;
+    font-size: var(--P);
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.2rem 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    outline: 2px solid var(--darker-background);
+    border-radius: var(--rounded);
+  }
+
   .project-nav {
-    display: none;
+    opacity: 1;
+    position: fixed;
+    right: 1rem;
+    bottom: 4rem;
+    padding: 1rem;
+    border-radius: var(--rounded);
+    transform: translateX(-90%);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    outline: 2px solid var(--darker-background);
   }
 }
 
@@ -1916,8 +1958,7 @@ footer > a > p:hover {
     outline: 3px solid rgba(var(--white), 0.9);
     border-radius: var(--rounded);
 
-    background-color: rgba(var(--white), 0.9);
-    backdrop-filter: blur(5px);
+    background-color: rgba(var(--white));
   }
 
   /* Hamburger menu */
@@ -1960,10 +2001,10 @@ footer > a > p:hover {
     padding: 2rem;
     margin-top: 1rem;
 
-    background-color: var(--background);
+    background-color: white;
     border-bottom-left-radius: var(--rounded);
     border-bottom-right-radius: var(--rounded);
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 
     flex-direction: column;
     gap: 1rem;
@@ -2062,9 +2103,6 @@ footer > a > p:hover {
   }
 
   /* -------- Project Page --------- */
-  .project-nav {
-    display: none;
-  }
 
   .project-header > div:first-of-type {
     text-align: center;

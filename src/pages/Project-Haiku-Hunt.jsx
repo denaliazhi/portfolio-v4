@@ -456,9 +456,9 @@ export default function HaikuHunt() {
               </Accordion>
             </div>
             <ButtonBar label="Check it out">
-              <a href="https://haiku-hunt.koyeb.app/">
+              {/* <a href="https://haiku-hunt.koyeb.app/">
                 Demo
-              </a>
+              </a> */}
               <a href="https://github.com/denaliazhi/haiku-hunt">
                 Github repository
               </a>
@@ -469,7 +469,7 @@ export default function HaikuHunt() {
             <h2>Final Thoughts</h2>
             <p>
               A few months ago, I was writing{" "}
-              <a href="https://denaliazhi.github.io/odin-recipes/">
+              <a href="/The-Odin-Project">
                 static websites
               </a>{" "}
               in pure HTML and CSS. I'm proud of
